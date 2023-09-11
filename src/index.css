@@ -30,6 +30,7 @@ header {
 header a:hover,
 header a:active {
   color: rgb(216, 216, 216);
+  cursor: pointer;
 }
 
 .main-nav ul {
