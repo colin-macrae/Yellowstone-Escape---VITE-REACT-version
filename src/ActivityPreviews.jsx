@@ -1,7 +1,7 @@
 ////// my experiment with nat parks api below
 import { useState, useEffect } from "react";
 
-const NatParksFetch = () => {
+const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const NatParksFetch = () => {
     </div>
   );
 };
-export default NatParksFetch;
+export default ActivityPreviews;
