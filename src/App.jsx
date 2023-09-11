@@ -2,7 +2,7 @@
 // import NatParksFetch from "./NatParksFetch";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import Home from "./home";
+import Home from "./Home";
 import "./index.css";
 import ActivityPreviews from "./ActivityPreviews";
 
