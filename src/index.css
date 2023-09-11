@@ -2,4 +2,41 @@
   margin: 0;
   padding: 0;
   border: 0;
+  color: white;  
+  font-size: 1.2rem;
+}
+
+html {  
+  background-color: rgb(32, 47, 33);
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  background-color:rgb(99, 56, 13);
+  justify-content: space-between;
+  padding: 2rem;
+  text-decoration: none;
+}
+
+/* header a:visited {
+  color: white;
+} */
+
+header a:hover,
+header a:active {
+  color: rgb(216, 216, 216);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  margin: 0 .5rem;
 }

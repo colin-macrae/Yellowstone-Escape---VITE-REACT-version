@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 const NatParksFetch = () => {
   const [users, setUsers] = useState([]);
 
-  // useEffect is INSIDE a function, not outside
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,12 +25,10 @@ const NatParksFetch = () => {
 
   return (
     <div>
-      <h2>fetch data example</h2>
       <div>
-        {users.map((user) => {
+        {users.map((activity) => {
           // in the end i destructured it here instead of outside the map method
-          const { id, title, shortDescription, images, location, season } =
-            user;
+          const { id, title, shortDescription, images, location, season } = activity;
           return (
             <div key={id}>
               {/* <img src={user.images.url} alt={"hi"} /> */}
@@ -40,8 +37,6 @@ const NatParksFetch = () => {
               <div>{shortDescription}</div>
               <div>{location}</div>
               <div>{season}</div>
-
-              {/* <div>node ID: {node_id}</div> */}
             </div>
           );
         })}
