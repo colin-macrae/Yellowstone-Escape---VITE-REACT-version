@@ -1,5 +1,5 @@
 // const url = 'https://course-api.com/react-tours-project';
-import NatParksFetch from "./NatParksFetch";
+// import NatParksFetch from "./NatParksFetch";
 
 const App = () => {
   return (
