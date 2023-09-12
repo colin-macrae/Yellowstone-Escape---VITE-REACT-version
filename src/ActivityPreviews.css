@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem;
+  
 
 }
 
@@ -21,21 +22,47 @@
   width: 35rem;
   border-radius: 5px;
   overflow: hidden;
+  /* transition: all 0.15s; */
+  position: relative;
+}
+
+.activity-card:hover {
+  /* transform: translateY(-0.6rem); */
 }
 
 .activity-card-text {
   padding: 1rem;
+  
 }
 
 .activity-card-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
+  height: 4.4rem;
+  color: rgb(253, 226, 200);
 }
 
 .activity-card-details {  
   font-size: 1.6rem;
   margin-bottom: 1rem;
   line-height: 1.5;
+}
+
+.activity-card button {
+  color: white;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(99, 56, 13);
+  font-size: 1.4rem;
+  padding: .2rem .4rem;
+  border: .5px solid rgb(180, 103, 25);
+  border-radius: 3px;
+}
+
+.activity-card button:hover {
+  cursor: pointer;
+  background-color:rgb(145, 82, 19);
 }
 
 
