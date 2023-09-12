@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 
 }
 
@@ -18,10 +18,28 @@
 
 .activity-card {
   background-color: rgb(61, 88, 63);
-  /* margin: 1rem; */
   width: 35rem;
   border-radius: 5px;
   overflow: hidden;
 }
+
+.activity-card-text {
+  padding: 1rem;
+}
+
+.activity-card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.activity-card-details {  
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+
+
+
 
 

@@ -44,10 +44,15 @@ const ActivityPreviews = () => {
                   src={images[0].url}
                   alt={title}
                 />
-                <h3 className="header-tertiary">{title}</h3>
-                <div>{shortDescription}</div>
-                <div>{location}</div>
-                <div>{season}</div>
+
+                <div className="activity-card-text">
+                  <h3 className="header-tertiary activity-card-title">
+                    {title}
+                  </h3>
+                  <p className="activity-card-details">Description: {shortDescription}</p>
+                  <p className="activity-card-details">Location: {location}</p>
+                  <p className="activity-card-details">Season: {season}</p>
+                </div>
               </div>
             );
           })}
