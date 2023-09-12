@@ -1,0 +1,27 @@
+.activities-list-header {
+  text-align: center;
+}
+
+.activity-cards-contaier {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+}
+
+.activity-list-img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.activity-card {
+  background-color: rgb(61, 88, 63);
+  /* margin: 1rem; */
+  width: 35rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+

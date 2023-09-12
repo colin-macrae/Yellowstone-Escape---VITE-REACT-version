@@ -1,5 +1,7 @@
 ////// my experiment with nat parks api below
 import { useState, useEffect } from "react";
+import "./ActivityPreviews.css";
+import "./index.css";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
@@ -25,21 +27,31 @@ const ActivityPreviews = () => {
 
   return (
     <div>
-      <div>
-        {users.map((activity) => {
-          // in the end i destructured it here instead of outside the map method
-          const { id, title, shortDescription, images, location, season } = activity;
-          return (
-            <div key={id}>
-              {/* <img src={user.images.url} alt={"hi"} /> */}
-              <div>{title}</div>
-              <img style={{ width: "550px" }} src={images[0].url} alt={title} />
-              <div>{shortDescription}</div>
-              <div>{location}</div>
-              <div>{season}</div>
-            </div>
-          );
-        })}
+      <div className="container">
+        <h2 className="header-secondary activities-list-header">
+          Activities List
+        </h2>
+
+        <div className="activity-cards-contaier">
+          {users.map((activity) => {
+            // in the end i destructured it here instead of outside the map method
+            const { id, title, shortDescription, images, location, season } =
+              activity;
+            return (
+              <div className="activity-card" key={id}>
+                <img
+                  className="activity-list-img"
+                  src={images[0].url}
+                  alt={title}
+                />
+                <h3 className="header-tertiary">{title}</h3>
+                <div>{shortDescription}</div>
+                <div>{location}</div>
+                <div>{season}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
