@@ -52,8 +52,12 @@ const ActivityPreviews = () => {
                   <p className="activity-card-details">Description: {shortDescription}</p>
                   <p className="activity-card-details">Location: {location}</p>
                   <p className="activity-card-details">Season: {season}</p>
+                  <div className="add-to-favs-btn">
+                    <button>Add to Favorites</button>
+                  </div>
+                  
                 </div>
-                <button>Add to Favorites</button>
+                
               </div>
             );
           })}
