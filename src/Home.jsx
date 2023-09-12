@@ -8,7 +8,6 @@ function Home() {
         <h2>Yellowstone Escape</h2>
         <Link to="/activitypreviews" href="#">See activities</Link>
       </main>
-      {/* <NatParksFetch /> */}
     </>
   );
 }

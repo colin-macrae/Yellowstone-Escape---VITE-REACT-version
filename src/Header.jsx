@@ -1,5 +1,3 @@
-// const url = 'https://course-api.com/react-tours-project';
-// import NatParksFetch from "./NatParksFetch";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -24,12 +22,6 @@ function Header() {
           </ul>
         </nav>
       </header>
-
-      {/* <main>
-        <h2>Yellowstone Escape</h2>
-        <a href="#">See activities</a>
-      </main>
-      <NatParksFetch /> */}
     </>
   );
 };
