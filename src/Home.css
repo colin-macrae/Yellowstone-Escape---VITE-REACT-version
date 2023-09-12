@@ -1,0 +1,18 @@
+.home-header {
+  text-align: center;
+}
+
+.see-activities-btn {
+  /* display: inline;
+  text-align: center;
+  margin: auto; */
+  /* display: block; */
+  text-align: center;
+  background-color: rgb(99, 56, 13);
+  padding: 2rem;
+  width: 15rem;
+  display: block;
+  margin: auto;
+  
+
+}

@@ -26,9 +26,9 @@
   position: relative;
 }
 
-.activity-card:hover {
-  /* transform: translateY(-0.6rem); */
-}
+/* .activity-card:hover {
+  transform: translateY(-0.6rem);
+} */
 
 .activity-card-text {
   padding: 1rem;
