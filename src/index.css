@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0;
   border: 0;
-  color: white;  
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  box-sizing: border-box;
 }
 
-html {  
+body {
+  font-family: "Rubik", sans-serif;
   background-color: rgb(32, 47, 33);
+  color: white;
+}
+
+html {
   font-size: 62.5%;
 }
 
@@ -17,18 +22,19 @@ a {
 
 header {
   display: flex;
-  background-color:rgb(99, 56, 13);
+  background-color: rgb(99, 56, 13);
   justify-content: space-between;
   padding: 2rem;
   text-decoration: none;
 }
 
-/* header a:visited {
+a:visited,
+a:link {
   color: white;
-} */
+}
 
-header a:hover,
-header a:active {
+a:hover,
+a:active {
   color: rgb(216, 216, 216);
   cursor: pointer;
 }
@@ -39,5 +45,5 @@ header a:active {
 }
 
 .nav-link {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
