@@ -23,7 +23,7 @@
   border-radius: 5px;
   overflow: hidden;
   /* transition: all 0.15s; */
-  /* position: relative; */
+  position: relative;
 }
 
 /* .activity-card:hover {
@@ -32,6 +32,10 @@
 
 .activity-card-text {
   padding: 1rem;  
+}
+
+.activity-card-text:last-child {
+  margin-bottom: 3rem; 
 }
 
 .activity-card-title {
@@ -49,7 +53,7 @@
 
 .activity-card button {
   color: white;
-  /* position: absolute; */
+  position: absolute;
   bottom: 1rem;
   right: 1rem;
   background-color: rgb(99, 56, 13);
