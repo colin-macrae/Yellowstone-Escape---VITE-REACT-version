@@ -10,10 +10,12 @@
   text-align: center;
   background-color: rgb(99, 56, 13);
   padding: 2rem;
-  width: 15rem;
+  width: 25rem;
   display: block;
   margin: auto;
   border-radius: 5px;
-  
+}
 
+.see-activities-btn:hover {
+  background-color: rgb(145, 82, 19);;
 }

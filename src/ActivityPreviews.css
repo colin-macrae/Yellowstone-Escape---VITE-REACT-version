@@ -22,13 +22,14 @@
   width: 35rem;
   border-radius: 5px;
   overflow: hidden;
-  /* transition: all 0.15s; */
+  transition: all 0.15s;
   position: relative;
 }
 
-/* .activity-card:hover {
-  transform: translateY(-0.6rem);
-} */
+.activity-card:hover {
+  transform: translateY(-0.2rem);
+  cursor: pointer;
+}
 
 .activity-card-text {
   padding: 1rem;  
@@ -59,12 +60,11 @@
   background-color: rgb(99, 56, 13);
   font-size: 1.4rem;
   padding: .2rem .4rem;
-  border: .5px solid rgb(180, 103, 25);
+  border: .5px solid rgb(235, 146, 58);
   border-radius: 3px;
 }
 
 .activity-card button:hover {
-  cursor: pointer;
   background-color:rgb(145, 82, 19);
 }
 
