@@ -10,7 +10,12 @@ function Home() {
           <h1 className="home-header heading-primary">
             Looking to Escape? Look no Further.
           </h1>
-          <p>Fifty of Yellowstone Park's most unforgettable activities that you simply must experience.</p>
+          <p>
+            Discover the top 50 must-experience activities in Yellowstone Park.
+            Whether you're snowmobiling in the winter, rock climbing in the
+            summer, or marveling at wildlife and the wonders of Mother Nature,
+            our guide has you covered.
+          </p>
           <Link className="see-activities-btn" to="/activitypreviews" href="#">
             BROWSE ACTIVITIES &rarr;
           </Link>
