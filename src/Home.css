@@ -5,23 +5,26 @@
   padding-right: 4rem;  
 }
 
+.hero-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rem;
+  max-width: 140rem;
+}
+
 .heading-primary {
-  font-size: 4.6rem;
+  font-size: 5.2rem;
   line-height: 1.05;
   margin-bottom: 3.2rem;
 }
 
 .hero-section-text-container p {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   font-size: 2rem;
   line-height: 1.5;
 }
 
 .see-activities-btn {
-  /* display: inline;
-  text-align: center;
-  margin: auto; */
-  /* display: block; */
   text-align: center;
   background-color: rgb(99, 56, 13);
   padding: 2rem;
@@ -33,12 +36,6 @@
 
 .see-activities-btn:hover {
   background-color: rgb(145, 82, 19);;
-}
-
-.hero-section {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10rem;
 }
 
 .hero-section img {
