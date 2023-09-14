@@ -5,7 +5,13 @@ function Header() {
     <>
       <header>
         <Link to="/" className="header-title" href="#">
-          Yellowstone Escape
+          <p>Yellowstone Escape</p>
+          <p>Look no Further</p>
+          {/* <img
+            className="yellowstone-escape-logo"
+            src="images\YE-logo.png"
+            alt="Yellowstone Escape logo"
+          /> */}
         </Link>
         <nav class="main-nav">
           <ul>
@@ -15,9 +21,9 @@ function Header() {
               </Link>
             </li> */}
             <li>
-              <a className="nav-link" href="#">
+              {/* <a className="nav-link" href="#">
                 My Activities
-              </a>
+              </a> */}
             </li>
           </ul>
         </nav>

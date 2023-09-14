@@ -49,6 +49,21 @@ a:active {
   margin: 0 0.5rem;
 }
 
+.header-title {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.363) !important;
+  background-color: rgb(32, 47, 33); 
+  padding: .5rem 1.2rem;
+  border-radius: 35px;
+  text-align: center;
+}
+
+.header-title :nth-child(2) {
+  font-size: .7rem;
+  letter-spacing: 2px;
+}
+
 .container {
   /* 1120 or 1140 pixels is common */
   max-width: 120rem;
@@ -66,6 +81,10 @@ a:active {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 3.2rem;
+}
+
+.yellowstone-escape-logo {
+  border-radius: 15px;
 }
 
 
