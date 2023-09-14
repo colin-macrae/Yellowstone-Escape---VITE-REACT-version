@@ -5,10 +5,9 @@
 .activity-cards-contaier {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 3rem;
-  
-
+  margin-bottom: 2rem;
 }
 
 .activity-list-img {
@@ -32,11 +31,11 @@
 }
 
 .activity-card-text {
-  padding: 1rem;  
+  padding: 1rem;
 }
 
 .activity-card-text:last-child {
-  margin-bottom: 3rem; 
+  margin-bottom: 3rem;
 }
 
 .activity-card-title {
@@ -46,7 +45,7 @@
   color: rgb(253, 226, 200);
 }
 
-.activity-card-details {  
+.activity-card-details {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   line-height: 1.5;
@@ -59,13 +58,14 @@
   right: 1rem;
   background-color: rgb(99, 56, 13);
   font-size: 1.4rem;
-  padding: .2rem .4rem;
-  border: .5px solid rgb(235, 146, 58);
+  padding: 0.2rem 0.4rem;
+  border: 0.5px solid rgb(235, 146, 58);
   border-radius: 3px;
 }
 
-.activity-card button:hover {
-  background-color:rgb(145, 82, 19);
+.activity-card button:hover,
+.pagination-buttons button:hover {
+  background-color: rgb(145, 82, 19);
 }
 
 .add-to-favs-btn {
@@ -73,8 +73,37 @@
   justify-content: flex-end;
 }
 
+/********************************/
+/* PAGINATION*/
+/********************************/
+.pagination-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
+.pagination-dot.active {
+  background-color: #007bff; /* Change this color to the active color you prefer */
+}
 
+.pagination-buttons button {
+  background-color: rgb(99, 56, 13);
+  color: white;
+  padding: 0.3rem 0.6rem;
+}
 
+.pagination-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
