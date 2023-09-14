@@ -83,15 +83,20 @@ const ActivityPreviews = () => {
             );
           })}
         </div>
+
         <div className="pagination-container">
           <div className="pagination-controls">
             <div className="pagination-buttons">
-              {currentPage > 1 && (
-                <button onClick={prevPage}>&larr; Previous</button>
-              )}
-              {indexOfLastItem < users.length && (
-                <button onClick={nextPage}>Next &rarr;</button>
-              )}
+              <div>
+                {currentPage > 1 && (
+                  <button onClick={prevPage}>&larr; Previous</button>
+                )}
+              </div>
+              <div>
+                {indexOfLastItem < users.length && (
+                  <button onClick={nextPage}>Next &rarr;</button>
+                )}
+              </div>
             </div>
             <div className="pagination-dots">{pageIndicators}</div>
           </div>
