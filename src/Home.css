@@ -1,15 +1,15 @@
-.hero-section-text-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 4rem;  
-}
-
 .hero-section {
   display: flex;
   justify-content: space-around;
   margin-top: 10rem;
   max-width: 140rem;
+}
+
+.hero-section-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 4rem;  
 }
 
 .heading-primary {
@@ -41,4 +41,6 @@
 .hero-section img {
   width: 60%
 }
+
+
 

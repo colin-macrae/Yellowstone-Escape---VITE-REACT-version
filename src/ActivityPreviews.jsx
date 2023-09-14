@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./ActivityPreviews.css";
 import "./index.css";
+import "./queries.css";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);

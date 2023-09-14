@@ -1,0 +1,40 @@
+@media (max-width: 1430px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem;
+    margin-top: 4rem;
+  }
+
+  .heading-primary {
+    font-size: 3.8rem;
+  }
+
+  .hero-section-text-container p {
+    margin-bottom: 4rem;
+  }
+
+  .see-activities-btn {
+    margin-bottom: 4rem;
+  }
+
+  .hero-section img {
+    width: 100%;
+  }
+
+  .activity-cards-contaier {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .activity-card {
+    width: 90%;
+  }
+
+  .activities-list-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+}
