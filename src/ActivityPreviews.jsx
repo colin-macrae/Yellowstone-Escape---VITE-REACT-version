@@ -29,10 +29,12 @@ const ActivityPreviews = () => {
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
+    window.scrollTo(0, 0);
   };
 
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
+    window.scrollTo(0, 0);
   };
 
   const pageIndicators = Array.from(
@@ -108,6 +110,31 @@ const ActivityPreviews = () => {
 };
 
 export default ActivityPreviews;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ////// my experiment with nat parks api below
 // import { useState, useEffect } from "react";
