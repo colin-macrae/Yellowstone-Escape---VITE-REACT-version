@@ -8,8 +8,8 @@
 
 body {
   font-family: "Rubik", sans-serif;
-  background-color: rgb(32, 47, 33);
-  color: white;
+  background-color: rgb(32, 47, 33);  
+  color: rgb(255, 245, 235);
 }
 
 html {
@@ -30,8 +30,8 @@ header {
 }
 
 a:visited,
-a:link {
-  color: white;
+a:link {  
+  color: rgb(255, 245, 235);
 }
 
 a:hover,
@@ -52,14 +52,8 @@ a:active {
 .container {
   /* 1120 or 1140 pixels is common */
   max-width: 120rem;
-  padding: 0 3.2rem;
+  /* padding: 0 3.2rem; */
   margin: 0 auto 10rem;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  margin-bottom: 3.2rem;
 }
 
 .header-secondary {  

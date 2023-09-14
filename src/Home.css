@@ -1,6 +1,17 @@
-.home-header {
-  text-align: center;
+.hero-section-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  
 }
+
+.hero-section-text-container p {
+  margin-bottom: 6rem;
+  font-size: 2rem;
+}
+
+
 
 .see-activities-btn {
   /* display: inline;
@@ -18,4 +29,20 @@
 
 .see-activities-btn:hover {
   background-color: rgb(145, 82, 19);;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rem;
+}
+
+.hero-section img {
+  width: 60%
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
 }
