@@ -21,9 +21,9 @@ function Header() {
               </Link>
             </li> */}
             <li>
-              {/* <a className="nav-link" href="#">
+              <a className="nav-link" href="#">
                 My Activities
-              </a> */}
+              </a>
             </li>
           </ul>
         </nav>
