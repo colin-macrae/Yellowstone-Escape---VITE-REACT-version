@@ -15,11 +15,11 @@ function Header() {
         </Link>
         <nav class="main-nav">
           <ul>
-            {/* <li>
+            <li>
               <Link to="/" className="nav-link" href="#">
                 Home
               </Link>
-            </li> */}
+            </li>
             <li>
               <a className="nav-link" href="#">
                 My Activities
