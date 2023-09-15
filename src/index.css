@@ -61,6 +61,7 @@ a:active {
   padding: 0.5rem 1.2rem;
   /* border-radius: 35px; */
   text-align: center;
+  font-weight: bold;
 }
 
 .header-title :nth-child(1) {
