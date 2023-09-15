@@ -8,7 +8,7 @@
 
 body {
   font-family: "Rubik", sans-serif;
-  background-color: rgb(32, 47, 33);  
+  background-color: rgb(32, 47, 33);
   color: rgb(255, 245, 235);
 }
 
@@ -30,7 +30,7 @@ header {
 }
 
 a:visited,
-a:link {  
+a:link {
   color: rgb(255, 245, 235);
 }
 
@@ -55,22 +55,22 @@ a:active {
 }
 
 .header-title {
-  font-family: 'Cabin Sketch', cursive;
+  font-family: "Cabin Sketch", cursive;
   /* border: 1px solid rgba(255, 255, 255, 0.363) !important; */
   /* background-color: rgb(32, 47, 33);  */
-  padding: .5rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   /* border-radius: 35px; */
   text-align: center;
-}
-
-.header-title :nth-child(2) {
-  font-size: .7rem;
-  letter-spacing: 2px;
 }
 
 .header-title :nth-child(1) {
   font-size: 1.5rem;
   letter-spacing: 1.5px;
+}
+
+.header-title :nth-child(2) {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
 }
 
 .container {
@@ -80,7 +80,7 @@ a:active {
   margin: 0 auto 10rem;
 }
 
-.header-secondary {  
+.header-secondary {
   font-size: 4.4rem;
   line-height: 1.2;
   margin-bottom: 9.6rem;
@@ -91,9 +91,3 @@ a:active {
   line-height: 1.2;
   margin-bottom: 3.2rem;
 }
-
-
-
-
-
-
