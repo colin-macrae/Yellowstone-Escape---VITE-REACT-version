@@ -92,7 +92,7 @@ const ActivityPreviews = () => {
 };
 
 function Activity({ activity }) {
-  const { id, title, shortDescription, images, location, season } = activity;
+  const { title, shortDescription, images, location, season } = activity;
   return (
     <>
       <img className="activity-list-img" src={images[0].url} alt={title} />
