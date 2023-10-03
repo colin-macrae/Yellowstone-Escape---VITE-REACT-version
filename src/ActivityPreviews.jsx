@@ -58,30 +58,12 @@ const ActivityPreviews = () => {
         </h2>
 
         <div className="activity-cards-contaier">
-          {currentItems.map((activity) => {
-            const { id, title, shortDescription, images, location, season } =
-              activity;
+          {currentItems.map((activity, id) => {            
             return (
               <div className="activity-card" key={id}>
-                <img
-                  className="activity-list-img"
-                  src={images[0].url}
-                  alt={title}
-                />
 
-                <div className="activity-card-text">
-                  <h3 className="header-tertiary activity-card-title">
-                    {title}
-                  </h3>
-                  <p className="activity-card-details">
-                    Description: {shortDescription}
-                  </p>
-                  <p className="activity-card-details">Location: {location}</p>
-                  <p className="activity-card-details">Season: {season}</p>
-                  <div className="add-to-favs-btn">
-                    <button>Add to Favorites</button>
-                  </div>
-                </div>
+                <Activity activity={activity} />
+
               </div>
             );
           })}
@@ -108,6 +90,24 @@ const ActivityPreviews = () => {
     </div>
   );
 };
+
+function Activity({ activity }) {
+  const { id, title, shortDescription, images, location, season } = activity;
+  return (
+    <>
+      <img className="activity-list-img" src={images[0].url} alt={title} />
+      <div className="activity-card-text">
+        <h3 className="header-tertiary activity-card-title">{title}</h3>
+        <p className="activity-card-details">Description: {shortDescription}</p>
+        <p className="activity-card-details">Location: {location}</p>
+        <p className="activity-card-details">Season: {season}</p>
+        <div className="add-to-favs-btn">
+          <button>Add to Favorites</button>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default ActivityPreviews;
 
