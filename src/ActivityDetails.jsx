@@ -48,8 +48,28 @@ export default function ActivityDetails () {
 
   return (
     <div>
+      <p>(page under construction)</p>
       <p>{currentActivity.title}</p>
-      <p>(under construction)</p>
+      <img
+        className="activity-list-img"
+        src={currentActivity.images[0].url}
+        alt={currentActivity.title}
+      />
+      <p
+        dangerouslySetInnerHTML={{ __html: currentActivity.longDescription }}
+      />
+      <p>Duration: {currentActivity.duration}</p>
+      <p>Activity type: {currentActivity.activities.name}</p>
+      <p>Pets allowed: {currentActivity.arePetsPermittedWithRestrictions}</p>
+      <p>Location: {currentActivity.location}</p>
+      <p>Season: {currentActivity.season}</p>
+      <p>Time of Day: {currentActivity.timeOfDay}</p>
+      <p>Accessibility information:</p>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: currentActivity.accessibilityInformation,
+        }}
+      />
     </div>
   );
 }
