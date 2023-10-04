@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./ActivityPreviews.css";
 import "./index.css";
 import "./queries.css";
+import { Link } from "react-router-dom";
+
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
@@ -92,9 +94,9 @@ const ActivityPreviews = () => {
 };
 
 function Activity({ activity }) {
-  const { title, shortDescription, images, location, season } = activity;
+  const { id, title, shortDescription, images, location, season } = activity;
   return (
-    <>
+    <Link to={`/activitydetails/${id}`}>
       <img className="activity-list-img" src={images[0].url} alt={title} />
       <div className="activity-card-text">
         <h3 className="header-tertiary activity-card-title">{title}</h3>
@@ -105,7 +107,7 @@ function Activity({ activity }) {
           <button>Add to Favorites</button>
         </div>
       </div>
-    </>
+    </Link>
   );
 }
 
