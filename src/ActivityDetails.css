@@ -1,0 +1,18 @@
+.details-container {
+  padding:  10px;
+  background-color: rgb(61, 88, 63);
+  width: 98%;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.details-container p {
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.details-container img {
+  margin-bottom: 2rem;
+}

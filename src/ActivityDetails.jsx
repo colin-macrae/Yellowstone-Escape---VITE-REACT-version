@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ActivityPreviews from "./ActivityPreviews";
+import "./ActivityDetails.css";
 
 
 export default function ActivityDetails () {
@@ -47,7 +47,7 @@ export default function ActivityDetails () {
   findActivity()
 
   return (
-    <div>
+    <div className="container details-container">
       <p>(page under construction)</p>
       <p>{currentActivity.title}</p>
       <img
@@ -70,6 +70,7 @@ export default function ActivityDetails () {
           __html: currentActivity.accessibilityInformation,
         }}
       />
+      <button>Add to Favorites</button>
     </div>
   );
 }
