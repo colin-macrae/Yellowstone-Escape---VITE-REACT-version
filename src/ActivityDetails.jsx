@@ -80,7 +80,6 @@ async function fetchActivity(id) {
   const res = await fetch(
     `https://developer.nps.gov/api/v1/thingstodo?parkCode=yell&api_key=iSpPR5udcPCzijjVFDgRMe2hLAfepOt9jbFeGFjX`
   );
-  // console.log(res);
   if (!res.ok) throw new Error(`fetch Error ${res.status}`);
   return await res.json();  
 }
