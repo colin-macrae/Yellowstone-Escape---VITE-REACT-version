@@ -48,7 +48,7 @@ export default function ActivityDetails () {
 
   return (
     <div className="container details-container">
-      <p>(page under construction)</p>
+      <p className="under-construction">**page under construction**</p>
       <p>{currentActivity.title}</p>
       <img
         className="activity-list-img"

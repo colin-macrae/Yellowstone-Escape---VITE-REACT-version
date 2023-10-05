@@ -1,3 +1,8 @@
+.under-construction {
+  color: rgb(253, 107, 107);
+  font-size: 25px;
+}
+
 .details-container {
   padding:  10px;
   background-color: rgb(61, 88, 63);
@@ -15,4 +20,22 @@
 
 .details-container img {
   margin-bottom: 2rem;
+}
+
+.details-container button {
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: rgb(99, 56, 13);
+  font-size: 1.4rem;
+  padding: 0.2rem 0.4rem;
+  border: 0.5px solid rgb(235, 146, 58);
+  border-radius: 3px;
+  height: 4rem;
+  width: 20rem;
+}
+
+.details-container:last-child {
+  padding-bottom: 8rem;
 }

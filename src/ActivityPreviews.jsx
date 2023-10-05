@@ -100,7 +100,7 @@ function Activity({ activity }) {
       <img className="activity-list-img" src={images[0].url} alt={title} />
       <div className="activity-card-text">
         <h3 className="header-tertiary activity-card-title">{title}</h3>
-        <p className="activity-card-details">Description: {shortDescription}</p>
+        <p className="activity-card-details">{shortDescription}</p>
         <p className="activity-card-details">Location: {location}</p>
         <p className="activity-card-details">Season: {season}</p>
         <div className="add-to-favs-btn">
