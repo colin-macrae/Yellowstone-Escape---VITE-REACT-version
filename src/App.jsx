@@ -1,5 +1,3 @@
-// const url = 'https://course-api.com/react-tours-project';
-// import NatParksFetch from "./NatParksFetch";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";

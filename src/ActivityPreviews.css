@@ -88,7 +88,7 @@
 }
 
 .pagination-dot.active {
-  background-color: #007bff; /* Change this color to the active color you prefer */
+  background-color: #007bff; 
 }
 
 .pagination-buttons button {

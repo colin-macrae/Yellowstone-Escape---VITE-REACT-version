@@ -7,11 +7,6 @@ function Header() {
         <Link to="/" className="header-title" href="#">
           <p>Yellowstone Escape</p>
           <p>LOOK NO FURTHER</p>
-          {/* <img
-            className="yellowstone-escape-logo"
-            src="images\YE-logo.png"
-            alt="Yellowstone Escape logo"
-          /> */}
         </Link>
         <nav class="main-nav">
           <ul>
