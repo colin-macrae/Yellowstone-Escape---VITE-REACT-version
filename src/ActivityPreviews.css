@@ -66,6 +66,7 @@
 .activity-card button:hover,
 .pagination-buttons button:hover {
   background-color: rgb(145, 82, 19);
+  cursor: pointer;
 }
 
 .add-to-favs-btn {

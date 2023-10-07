@@ -38,6 +38,7 @@
 
 .details-container button:hover {
   background-color: rgb(145, 82, 19);
+  cursor: pointer;
 }
 
 .details-container:last-child {
