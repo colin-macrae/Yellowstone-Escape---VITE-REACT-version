@@ -39,7 +39,8 @@
 }
 
 .hero-section img {
-  width: 55%
+  width: 55%;
+  border-radius: 5px;
 }
 
 
