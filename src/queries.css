@@ -51,6 +51,10 @@
   }
 
   .header-title :nth-child(1) {
-    font-size: 1.2rem;
+    font-size: 2rem;
+  }
+
+  .header-title :nth-child(2) {
+    font-size: 1.3rem;
   }
 }
