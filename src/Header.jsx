@@ -11,8 +11,8 @@ function Header() {
         <nav class="main-nav">
           <ul>
             <li>
-              <Link to="/" className="nav-link" href="#">
-                Home
+              <Link to="/activitypreviews" className="nav-link" href="#">
+                Browse
               </Link>
             </li>
             <li>

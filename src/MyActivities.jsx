@@ -5,6 +5,7 @@ export default function MyActivities () {
   return (
     <div>
       <div className="container">
+        <p className="under-construction">**page under construction**</p>
         <h2 className="header-secondary activities-list-header">
           My Activities
         </h2>
@@ -18,15 +19,22 @@ export default function MyActivities () {
             </div>
           ))}
         </div>
+        <button
+          onClick={() => {
+            localStorage.removeItem("activities-cart");
+            window.location.reload();
+          }}
+        >
+          Clear All Activities
+        </button>
       </div>
     </div>
   );
 }
 
-
-
-
-// cart manipulation functions //
+// ***************************//
+// CART MANIPULATION FUNCTIONS//
+// ***************************//
 export function getActivitiesCart() {
   let activitiesCart = JSON.parse(localStorage.getItem("activities-cart"));
   if (activitiesCart === null) {
