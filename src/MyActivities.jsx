@@ -6,6 +6,10 @@ export default function MyActivities () {
     <div>
       <div className="container">
         <p className="under-construction">**page under construction**</p>
+
+        <p className="under-construction">
+          fix: Remove from My Activities button
+        </p>
         <h2 className="header-secondary activities-list-header">
           My Activities
         </h2>
@@ -14,7 +18,7 @@ export default function MyActivities () {
             <div className="activity-card" key={activity.id}>
               <Activity activity={activity} />
               <button onClick={() => removeFromCart(activity)}>
-                Remove from Favorites
+                Remove from My Activities
               </button>
             </div>
           ))}
@@ -25,7 +29,7 @@ export default function MyActivities () {
             window.location.reload();
           }}
         >
-          Clear All Activities
+          Clear all My Activities
         </button>
       </div>
     </div>
