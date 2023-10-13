@@ -93,7 +93,7 @@ const ActivityPreviews = () => {
   );
 };
 
-function Activity({ activity }) {
+export function Activity({ activity }) {
   const { id, title, shortDescription, images, location, season } = activity;
   return (
     <Link to={`/activitydetails/${id}`}>

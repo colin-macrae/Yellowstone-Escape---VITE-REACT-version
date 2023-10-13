@@ -1,8 +1,29 @@
+import { Activity } from "./ActivityPreviews";
+
 export default function MyActivities () {
+  let myActivities = getActivitiesCart();
   return (
-    <h2>My Activities</h2>
-  )
+    <div>
+      <div className="container">
+        <h2 className="header-secondary activities-list-header">
+          My Activities
+        </h2>
+        <div className="activity-cards-container">
+          {myActivities.map((activity) => (
+            <div className="activity-card" key={activity.id}>
+              <Activity activity={activity} />
+              <button onClick={() => removeFromCart(activity)}>
+                Remove from Favorites
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
+
+
 
 
 // cart manipulation functions //
