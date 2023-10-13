@@ -14,7 +14,7 @@ export function addToMyActivities(currentActivity) {
   const activitiesCart = items;
   for (let i = 0; i < activitiesCart.length; i++) {
     if (activitiesCart[i].id === currentActivity.id) {
-      alert("Activities may only be added to cart once.");
+      alert("This activity has already been added.");
       return;
     }
   }
