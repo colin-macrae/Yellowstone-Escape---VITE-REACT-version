@@ -6,10 +6,7 @@ export default function MyActivities () {
     <div>
       <div className="container">
         <p className="under-construction">**page under construction**</p>
-
-        <p className="under-construction">
-          fix: Remove from My Activities button
-        </p>
+        
         <h2 className="header-secondary activities-list-header">
           My Activities
         </h2>
@@ -66,7 +63,7 @@ export function addToMyActivities(currentActivity) {
 export function removeFromCart(currentActivity) {
   let cart = items;
   const newCart = items.filter(
-    (item) => currentActivity.id !== currentActivity.id
+    (item) => item.id !== currentActivity.id
   );
   localStorage.setItem("activities-cart", JSON.stringify(newCart));
   window.location.reload();
