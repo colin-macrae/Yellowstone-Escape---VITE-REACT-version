@@ -1,3 +1,10 @@
+export default function MyActivities () {
+  return (
+    <h2>My Activities</h2>
+  )
+}
+
+
 // cart manipulation functions //
 export function getActivitiesCart() {
   let activitiesCart = JSON.parse(localStorage.getItem("activities-cart"));

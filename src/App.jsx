@@ -4,6 +4,7 @@ import Home from "./Home";
 import "./index.css";
 import ActivityPreviews from "./ActivityPreviews";
 import ActivityDetails from "./ActivityDetails";
+import MyActivities from "./MyActivities";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/activitypreviews" element={<ActivityPreviews />} />
         <Route path="/activitydetails/:id" element={<ActivityDetails />} />
+        <Route path="/myactivities" element={<MyActivities />} />
       </Routes>
     </div>
   );
