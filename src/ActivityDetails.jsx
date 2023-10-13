@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ActivityDetails.css";
 import "./queries.css"
+import { addToMyActivities } from "./MyActivities.jsx";
 
 
 export default function ActivityDetails () {
@@ -71,7 +72,10 @@ export default function ActivityDetails () {
           __html: currentActivity.accessibilityInformation,
         }}
       />
-      <button>Add to Favorites</button>
+      <button onClick={() => addToMyActivities(currentActivity)}>
+        Add to Favorites
+      </button>
+      
     </div>
   );
 }
