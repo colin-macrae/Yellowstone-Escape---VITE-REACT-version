@@ -103,9 +103,9 @@ export function Activity({ activity }) {
         <p className="activity-card-details">{shortDescription}</p>
         <p className="activity-card-details">Location: {location}</p>
         <p className="activity-card-details">Season: {season}</p>
-        <div className="add-to-favs-btn">
+        {/* <div className="add-to-favs-btn">
           <button>Add to Favorites</button>
-        </div>
+        </div> */}
       </div>
     </Link>
   );
