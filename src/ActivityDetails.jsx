@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ActivityDetails.css";
 import "./queries.css"
 import { addToMyActivities } from "./MyActivities.jsx";
+import { removeFromCart } from "./MyActivities.jsx";
 
 
 export default function ActivityDetails () {
@@ -75,7 +76,9 @@ export default function ActivityDetails () {
       <button onClick={() => addToMyActivities(currentActivity)}>
         Add to Favorites
       </button>
-      
+      <button onClick={() => removeFromCart(currentActivity)}>
+        Remove from My Activities
+      </button>
     </div>
   );
 }

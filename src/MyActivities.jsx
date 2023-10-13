@@ -22,3 +22,12 @@ export function addToMyActivities(currentActivity) {
   localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
   window.location.reload();
 }
+
+export function removeFromCart(currentActivity) {
+  let cart = items;
+  const newCart = items.filter(
+    (item) => currentActivity.id !== currentActivity.id
+  );
+  localStorage.setItem("activities-cart", JSON.stringify(newCart));
+  window.location.reload();
+}
