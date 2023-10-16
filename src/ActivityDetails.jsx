@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ActivityDetails.css";
 import "./queries.css"
-// import { addToMyActivities } from "./MyActivities.jsx";
-// import { removeFromCart } from "./MyActivities.jsx";
-import { getActivitiesCart } from "./MyActivities";
+import { addToMyActivities } from "./MyActivities.jsx";
+import { removeFromCart } from "./MyActivities.jsx";
 
 
 export default function ActivityDetails () {
@@ -12,7 +11,6 @@ export default function ActivityDetails () {
   const [activities, setActivities] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
-  const [myActivities, setMyActivities] = useState([]);
 
   useEffect(() => {
     async function loadActivities() {
@@ -31,49 +29,25 @@ export default function ActivityDetails () {
 
   if (isLoading) return <div className="loading-or-error">Loading...</div>;
   if (error) {
-    return <div>Error Loading Activities: {error.message}</div>;
+    return (
+      <div>
+        Error Loading Activities: {error.message}
+      </div>
+    );
   }
   if (!activities) return null;
 
   // loop through API's JSON data to find current activity's details
   let currentActivity = null;
-  function findActivity() {
+  function findActivity () {
     for (let i = 0; i < activities.data.length; i++) {
       if (activities.data[i].id === id) {
-        currentActivity = activities.data[i];
-        return currentActivity;
+        currentActivity = activities.data[i];        
+        return currentActivity
       }
     }
   }
-  findActivity();
-
-  // ***************************//
-  // CART MANIPULATION FUNCTIONS//
-  // ***************************//
-  const items = getActivitiesCart();
-  const cartItemsQuantity = items.length;
-
-  function addToMyActivities(currentActivity) {
-    const activitiesCart = items;
-    for (let i = 0; i < activitiesCart.length; i++) {
-      if (activitiesCart[i].id === currentActivity.id) {
-        alert("This activity has already been added.");
-        return;
-      }
-    }
-    activitiesCart.push(currentActivity);
-    localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
-    setMyActivities(items);
-  }
-  console.log(myActivities);
-
-  function removeFromCart(currentActivity) {
-    let cart = items;
-    const newCart = items.filter((item) => item.id !== currentActivity.id);
-    localStorage.setItem("activities-cart", JSON.stringify(newCart));
-    setMyActivities(items);
-  }
-  console.log(myActivities);
+  findActivity()
 
   return (
     <div className="container details-container">
@@ -116,8 +90,3 @@ async function fetchActivities() {
   if (!res.ok) throw new Error(`fetch Error ${res.status}`);
   return await res.json();  
 }
-
-
-
-
-
