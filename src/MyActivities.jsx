@@ -1,6 +1,15 @@
 import { Activity } from "./ActivityPreviews";
+import { useState, useEffect } from "react";
 
 export default function MyActivities () {
+  const [mySavedActivities, setMySavedActivities] = useState([]);
+
+  useEffect(() => {
+    // Initialize the state with activities from localStorage
+    const activities = getActivitiesCart();
+    setMySavedActivities(activities);
+  }, []);
+
   let myActivities = getActivitiesCart();
   return (
     <div>
@@ -23,7 +32,8 @@ export default function MyActivities () {
         <button
           onClick={() => {
             localStorage.removeItem("activities-cart");
-            window.location.reload();
+            setMySavedActivities([]);
+            // window.location.reload();
           }}
         >
           Clear all My Activities
@@ -43,28 +53,4 @@ export function getActivitiesCart() {
   } else return activitiesCart;
 }
 
-const items = getActivitiesCart();
-const cartItemsQuantity = items.length;
-console.log(cartItemsQuantity)
 
-export function addToMyActivities(currentActivity) {
-  const activitiesCart = items;
-  for (let i = 0; i < activitiesCart.length; i++) {
-    if (activitiesCart[i].id === currentActivity.id) {
-      alert("This activity has already been added.");
-      return;
-    }
-  }
-  activitiesCart.push(currentActivity);
-  localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
-  window.location.reload();
-}
-
-export function removeFromCart(currentActivity) {
-  let cart = items;
-  const newCart = items.filter(
-    (item) => item.id !== currentActivity.id
-  );
-  localStorage.setItem("activities-cart", JSON.stringify(newCart));
-  window.location.reload();
-}
