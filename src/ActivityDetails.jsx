@@ -64,7 +64,6 @@ export default function ActivityDetails () {
     activitiesCart.push(currentActivity);
     localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
     setMyActivities(items);
-    // window.location.reload();
   }
   console.log(myActivities);
 
@@ -73,7 +72,6 @@ export default function ActivityDetails () {
     const newCart = items.filter((item) => item.id !== currentActivity.id);
     localStorage.setItem("activities-cart", JSON.stringify(newCart));
     setMyActivities(items);
-    // window.location.reload();
   }
   console.log(myActivities);
 

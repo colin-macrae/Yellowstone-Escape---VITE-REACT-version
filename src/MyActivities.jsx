@@ -5,7 +5,6 @@ export default function MyActivities () {
   const [mySavedActivities, setMySavedActivities] = useState([]);
 
   useEffect(() => {
-    // Initialize the state with activities from localStorage
     const activities = getActivitiesCart();
     setMySavedActivities(activities);
   }, []);
@@ -33,7 +32,6 @@ export default function MyActivities () {
           onClick={() => {
             localStorage.removeItem("activities-cart");
             setMySavedActivities([]);
-            // window.location.reload();
           }}
         >
           Clear all My Activities
