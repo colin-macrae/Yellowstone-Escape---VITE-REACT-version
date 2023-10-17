@@ -9,7 +9,8 @@ export default function MyActivities () {
     setMySavedActivities(activities);
   }, []);
 
-  let myActivities = getActivitiesCart();
+  const myActivities = mySavedActivities;
+  
   return (
     <div>
       <div className="container">
@@ -64,7 +65,6 @@ export function addToMyActivities(currentActivity) {
   }
   activitiesCart.push(currentActivity);
   localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
-  window.location.reload();
 }
 
 export function removeFromCart(currentActivity) {
@@ -73,5 +73,4 @@ export function removeFromCart(currentActivity) {
     (activitiesCart) => activitiesCart.id !== currentActivity.id
   );
   localStorage.setItem("activities-cart", JSON.stringify(newCart));
-  window.location.reload();
 }
