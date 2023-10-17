@@ -113,9 +113,7 @@ const ActivityPreviews = () => {
 export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, setClassNameChange, classNameChange }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
-
-  console.log(mySavedActivities)
-
+  
   let added = false;
   function savedChecker() {
     if (mySavedActivities) {
@@ -123,7 +121,6 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
       for (let i = 0; i < savedActivities.length; i++) {
         if (savedActivities[i].id === id) {
           added = true;
-          console.log(added);
         }
       }
     }
