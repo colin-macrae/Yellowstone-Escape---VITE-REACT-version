@@ -4,18 +4,28 @@ import { useState, useEffect } from "react";
 export default function MyActivities () {
   const [mySavedActivities, setMySavedActivities] = useState([]);
 
+  // removeFromCart function is duplicated below as it must be able to setMySavedActivities directly within the scope of this function, and therefor the difference between the duplicates is the added line in the function below: setMySavedActivities(newCart).  the out-of-scope function below this component cannot update useState.
+  function removeFromCart(currentActivity) {
+    let activitiesCart = getActivitiesCart();
+    const newCart = activitiesCart.filter(
+      (activitiesCart) => activitiesCart.id !== currentActivity.id
+    );
+    localStorage.setItem("activities-cart", JSON.stringify(newCart));
+    setMySavedActivities(newCart);
+  }
+
   useEffect(() => {
     const activities = getActivitiesCart();
     setMySavedActivities(activities);
   }, []);
 
   const myActivities = mySavedActivities;
-  
+
   return (
     <div>
       <div className="container">
         <p className="under-construction">**page under construction**</p>
-        
+
         <h2 className="header-secondary activities-list-header">
           My Activities
         </h2>
@@ -51,9 +61,6 @@ export function getActivitiesCart() {
     return [];
   } else return activitiesCart;
 }
-
-const cartItemsQuantity = getActivitiesCart().length;
-console.log(cartItemsQuantity);
 
 export function addToMyActivities(currentActivity) {
   const activitiesCart = getActivitiesCart();
