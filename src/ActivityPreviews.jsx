@@ -11,7 +11,7 @@ const ActivityPreviews = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const [number, setNumber] = useState(true);
+  const [addClicked, setAddClicked] = useState(true);
 
 
 
@@ -20,7 +20,7 @@ const ActivityPreviews = () => {
   useEffect(() => {
     const cart = getActivitiesCart();
     setMySavedActivities(cart);
-  }, [number]);
+  }, [addClicked]);
 
 
   useEffect(() => {
@@ -78,10 +78,10 @@ const ActivityPreviews = () => {
               <div className="activity-card" key={id}>
                 <Activity
                   activity={activity}
-                  mySavedActivities={mySavedActivities} 
+                  mySavedActivities={mySavedActivities}
                   setMySavedActivities={setMySavedActivities}
-                  setNumber={setNumber}
-                  number={number}
+                  setAddClicked={setAddClicked}
+                  addClicked={addClicked}
                 />
               </div>
             );
@@ -110,7 +110,7 @@ const ActivityPreviews = () => {
   );
 };
 
-export function Activity({ activity, mySavedActivities, setNumber, number }) {
+export function Activity({ activity, mySavedActivities, setAddClicked, addClicked }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
 
@@ -145,7 +145,7 @@ export function Activity({ activity, mySavedActivities, setNumber, number }) {
         <button
           onClick={() => {
             addToMyActivities(currentActivity);
-            setNumber(!number); 
+            setAddClicked(!addClicked); 
           }}
         >
           {added ? "Added to Favorites" : "Add to Favorites"}
