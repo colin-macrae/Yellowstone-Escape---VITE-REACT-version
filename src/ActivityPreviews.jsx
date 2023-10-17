@@ -4,11 +4,24 @@ import "./index.css";
 import "./queries.css";
 import { Link } from "react-router-dom";
 import { addToMyActivities } from "./MyActivities";
+import { getActivitiesCart } from "./MyActivities";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+
+  const [number, setNumber] = useState(true);
+
+
+
+  const [mySavedActivities, setMySavedActivities] = useState([]);
+  
+  useEffect(() => {
+    const cart = getActivitiesCart();
+    setMySavedActivities(cart);
+  }, [number]);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,7 +76,13 @@ const ActivityPreviews = () => {
           {currentItems.map((activity, id) => {
             return (
               <div className="activity-card" key={id}>
-                <Activity activity={activity} />
+                <Activity
+                  activity={activity}
+                  mySavedActivities={mySavedActivities} 
+                  setMySavedActivities={setMySavedActivities}
+                  setNumber={setNumber}
+                  number={number}
+                />
               </div>
             );
           })}
@@ -91,9 +110,25 @@ const ActivityPreviews = () => {
   );
 };
 
-export function Activity({ activity }) {
+export function Activity({ activity, mySavedActivities, setNumber, number }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
+
+  console.log(mySavedActivities)
+
+  let added = false;
+  function savedChecker() {
+    if (mySavedActivities) {
+      const savedActivities = mySavedActivities;
+      for (let i = 0; i < savedActivities.length; i++) {
+        if (savedActivities[i].id === id) {
+          added = true;
+          console.log(added);
+        }
+      }
+    }
+  }
+  savedChecker();
 
   return (
     <>
@@ -107,7 +142,14 @@ export function Activity({ activity }) {
         </div>
       </Link>
       <div className="add-to-favs-btn">
-        <button onClick={() => addToMyActivities(currentActivity)}>Add to Favorites</button>
+        <button
+          onClick={() => {
+            addToMyActivities(currentActivity);
+            setNumber(!number); 
+          }}
+        >
+          {added ? "Added to Favorites" : "Add to Favorites"}
+        </button>
       </div>
     </>
   );
