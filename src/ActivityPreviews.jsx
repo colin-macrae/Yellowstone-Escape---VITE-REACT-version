@@ -9,14 +9,12 @@ import { getActivitiesCart } from "./MyActivities";
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-
-  const [addClicked, setAddClicked] = useState(true);
-
-
-
+  const itemsPerPage = 6;  
+  const [classNameChange, setClassNameChange] = useState("null");
   const [mySavedActivities, setMySavedActivities] = useState([]);
+  const [addClicked, setAddClicked] = useState(true);
   
+  // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
   useEffect(() => {
     const cart = getActivitiesCart();
     setMySavedActivities(cart);
@@ -82,6 +80,8 @@ const ActivityPreviews = () => {
                   setMySavedActivities={setMySavedActivities}
                   setAddClicked={setAddClicked}
                   addClicked={addClicked}
+                  setClassNameChange={setClassNameChange}
+                  classNameChange={classNameChange}
                 />
               </div>
             );
@@ -110,7 +110,7 @@ const ActivityPreviews = () => {
   );
 };
 
-export function Activity({ activity, mySavedActivities, setAddClicked, addClicked }) {
+export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, setClassNameChange, classNameChange }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
 
@@ -145,10 +145,11 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
         <button
           onClick={() => {
             addToMyActivities(currentActivity);
-            setAddClicked(!addClicked); 
+            setAddClicked(!addClicked);
           }}
+          className={added ? "added" : classNameChange}
         >
-          {added ? "Added to Favorites" : "Add to Favorites"}
+          {added ? "Added" : "Add to Favorites"}
         </button>
       </div>
     </>

@@ -23,6 +23,15 @@ export default function MyActivities () {
 
   return (
     <div>
+      <button
+        onClick={() => {
+          localStorage.removeItem("activities-cart");
+          setMySavedActivities([]);
+        }}
+      >
+        Clear all My Activities
+      </button>
+
       <div className="container">
         <p className="under-construction">**page under construction**</p>
 
@@ -39,14 +48,6 @@ export default function MyActivities () {
             </div>
           ))}
         </div>
-        <button
-          onClick={() => {
-            localStorage.removeItem("activities-cart");
-            setMySavedActivities([]);
-          }}
-        >
-          Clear all My Activities
-        </button>
       </div>
     </div>
   );

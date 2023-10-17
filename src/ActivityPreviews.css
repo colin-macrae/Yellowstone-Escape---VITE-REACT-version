@@ -78,6 +78,11 @@
   justify-content: flex-end;
 }
 
+.added {
+  background-color: grey !important;
+  border: none !important;
+}
+
 /********************************/
 /* PAGINATION*/
 /********************************/
@@ -112,3 +117,5 @@
   align-items: center;
   justify-content: center;
 }
+
+
