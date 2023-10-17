@@ -1,5 +1,6 @@
 import { Activity } from "./ActivityPreviews";
 import { useState, useEffect } from "react";
+import "./ActivityPreviews.css"
 
 export default function MyActivities () {
   const [mySavedActivities, setMySavedActivities] = useState([]);

@@ -147,7 +147,7 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
           }}
           className={added ? "added" : classNameChange}
         >
-          {added ? "Added" : "Add to Favorites"}
+          {added ? "Added" : "Add to My Activities"}
         </button>
       </div>
     </>
