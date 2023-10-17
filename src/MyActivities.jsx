@@ -53,7 +53,7 @@ export function getActivitiesCart() {
 }
 
 const cartItemsQuantity = getActivitiesCart().length;
-console.log(cartItemsQuantity)
+console.log(cartItemsQuantity);
 
 export function addToMyActivities(currentActivity) {
   const activitiesCart = getActivitiesCart();
@@ -68,7 +68,7 @@ export function addToMyActivities(currentActivity) {
 }
 
 export function removeFromCart(currentActivity) {
-  let activitiesCart = getActivitiesCart();;
+  let activitiesCart = getActivitiesCart();
   const newCart = activitiesCart.filter(
     (activitiesCart) => activitiesCart.id !== currentActivity.id
   );
