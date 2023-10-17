@@ -121,6 +121,7 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
       for (let i = 0; i < savedActivities.length; i++) {
         if (savedActivities[i].id === id) {
           added = true;
+          break;
         }
       }
     }

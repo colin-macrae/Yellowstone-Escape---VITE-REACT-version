@@ -43,7 +43,7 @@ export default function ActivityDetails () {
     for (let i = 0; i < activities.data.length; i++) {
       if (activities.data[i].id === id) {
         currentActivity = activities.data[i];        
-        return currentActivity
+        return;
       }
     }
   }
