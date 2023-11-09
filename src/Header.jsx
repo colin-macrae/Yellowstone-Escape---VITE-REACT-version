@@ -8,7 +8,7 @@ function Header() {
           <p>Yellowstone Escape</p>
           <p>LOOK NO FURTHER</p>
         </Link>
-        <nav class="main-nav">
+        <nav className="main-nav">
           <ul>
             <li>
               <Link to="/activitypreviews" className="nav-link" href="#">
