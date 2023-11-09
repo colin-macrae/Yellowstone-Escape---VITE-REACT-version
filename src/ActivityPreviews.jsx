@@ -70,7 +70,7 @@ const ActivityPreviews = () => {
           Activities List
         </h2>
 
-        <div className="activity-cards-contaier">
+        <div className="activity-cards-container">
           {currentItems.map((activity, id) => {
             return (
               <div className="activity-card" key={id}>
