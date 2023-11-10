@@ -58,17 +58,14 @@
     font-size: 1rem;
   }
 
-
   /* Footer */
   .footer-container {
     display: block;
+    margin-top: 10rem;
+    padding: 1rem 2rem;
   }
 
   .contact-info {
     margin-bottom: 3rem;
-  }
-
-  .footer-container {
-    padding: 1rem 2rem;
   }
 }
