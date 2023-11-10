@@ -21,6 +21,7 @@ export default function MyActivities() {
   }, []);
 
   const myActivities = mySavedActivities;
+  console.log(myActivities.length);
 
   return (
     <div>
@@ -31,14 +32,18 @@ export default function MyActivities() {
           My Activities
         </h2>
         <div className="activity-cards-container">
-          {myActivities.map((activity) => (
-            <div className="activity-card" key={activity.id}>
-              <Activity activity={activity} />
-              <button onClick={() => removeFromCart(activity)}>
-                Remove from My Activities
-              </button>
-            </div>
-          ))}
+          {myActivities.length > 0 ? (
+            myActivities.map((activity) => (
+              <div className="activity-card" key={activity.id}>
+                <Activity activity={activity} />
+                <button onClick={() => removeFromCart(activity)}>
+                  Remove from My Activities
+                </button>
+              </div>
+            ))
+          ) : (
+            <div className="no-favs">No items added to My Favorites</div>
+          )}
         </div>
         <button
           onClick={() => {
