@@ -13,6 +13,7 @@ const ActivityPreviews = () => {
   const [classNameChange, setClassNameChange] = useState("null");
   const [mySavedActivities, setMySavedActivities] = useState([]);
   const [addClicked, setAddClicked] = useState(true);
+  const [loading, setLoading] = useState(true);
   
   // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
   useEffect(() => {
@@ -29,12 +30,18 @@ const ActivityPreviews = () => {
         );
         const data = await response.json();
         setUsers(data.data);
+        setLoading(false); 
       } catch (error) {
         console.log(error);
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
+
+  if (loading) {
+    return <p className="loading">Loading...</p>; 
+  }
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
