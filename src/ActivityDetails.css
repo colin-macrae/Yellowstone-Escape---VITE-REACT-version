@@ -40,7 +40,8 @@
   padding-bottom: 1rem;
 }
 
-.details-like-btn, .details-like-btn:hover {
+.details-like-btn,
+.details-like-btn:hover {
   position: absolute;
   top: 0px;
   right: -4rem;
@@ -51,5 +52,11 @@
 @media (max-width: 600px) {
   .details-container {
     padding: 1rem;
+  }
+
+  .details-like-btn,
+  .details-like-btn:hover {
+    position: absolute;
+    right: -8rem;
   }
 }

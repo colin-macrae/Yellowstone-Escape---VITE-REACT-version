@@ -64,7 +64,6 @@ export default function ActivityDetails() {
           added = true;
         } else added = false;
       }
-      console.log(added);
     }
   }
   savedChecker();
