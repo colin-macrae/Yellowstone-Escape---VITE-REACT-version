@@ -48,12 +48,13 @@
   color: black;
   justify-content: space-between; 
   background-color: rgb(236, 229, 224);  
-  padding: 1rem 10rem;
+  padding: 1rem 4rem;
   line-height: 1.4;
 }
 
 .stay-connected {
-  margin-right: 30%;
+  margin-right: 40%;
+  margin-left: 2rem;
 }
 
 footer h3 {

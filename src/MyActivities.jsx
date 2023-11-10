@@ -21,7 +21,6 @@ export default function MyActivities() {
   }, []);
 
   const myActivities = mySavedActivities;
-  console.log(myActivities.length);
 
   return (
     <div>
