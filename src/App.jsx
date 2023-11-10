@@ -5,6 +5,7 @@ import "./index.css";
 import ActivityPreviews from "./ActivityPreviews";
 import ActivityDetails from "./ActivityDetails";
 import MyActivities from "./MyActivities";
+import Footer from "./Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/activitydetails/:id" element={<ActivityDetails />} />
         <Route path="/myactivities" element={<MyActivities />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
