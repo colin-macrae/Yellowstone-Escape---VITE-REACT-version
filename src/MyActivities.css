@@ -1,0 +1,27 @@
+.under-construction {
+  color: rgb(253, 107, 107);
+  font-size: 25px;
+}
+
+.remove-btn {
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: rgb(99, 56, 13);
+  font-size: 1.4rem;
+  padding: 0.2rem 0.4rem;
+  border: 0.5px solid rgb(235, 146, 58);
+  border-radius: 3px;
+}
+
+.remove-all-btn {
+  display: flex;
+  color: black;
+  background-color:rgb(255, 85, 85);
+  font-size: 1.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 5rem;
+}

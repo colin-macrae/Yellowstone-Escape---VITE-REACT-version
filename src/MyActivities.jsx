@@ -1,6 +1,7 @@
 import { Activity } from "./ActivityPreviews";
 import { useState, useEffect } from "react";
 import "./ActivityPreviews.css";
+import "./MyActivities.css"
 
 export default function MyActivities() {
   const [mySavedActivities, setMySavedActivities] = useState([]);
@@ -24,12 +25,13 @@ export default function MyActivities() {
               <div className="activity-card" key={activity.id}>
                 <Activity activity={activity} />
                 <button
+                  className="remove-btn"
                   onClick={() => {
                     removeFromCart(activity);
                     setMySavedActivities(getActivitiesCart());
                   }}
                 >
-                  Remove from My Activities
+                  Remove
                 </button>
               </div>
             ))
@@ -37,14 +39,19 @@ export default function MyActivities() {
             <div className="no-favs">No items added to My Favorites</div>
           )}
         </div>
-        <button
-          onClick={() => {
-            localStorage.removeItem("activities-cart");
-            setMySavedActivities([]);
-          }}
-        >
-          Clear all My Activities
-        </button>
+        {mySavedActivities.length > 0 ? (
+          <button
+            className="remove-all-btn"
+            onClick={() => {
+              localStorage.removeItem("activities-cart");
+              setMySavedActivities([]);
+            }}
+          >
+            Clear all My Activities
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
