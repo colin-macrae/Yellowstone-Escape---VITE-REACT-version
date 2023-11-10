@@ -14,16 +14,31 @@ export default function Footer() {
         <div className="stay-connected">
           <h3>STAY CONNECTED</h3>
           <p>
-            <i className="fab fa-facebook"></i>Facebook
+            <a href="https://www.facebook.com/YellowstoneNPS" target="_blank">
+              <i className="fab fa-facebook"></i>
+            </a>
+            Facebook
           </p>
           <p>
-            <i className="fab fa-instagram"></i>Instagram
+            <a href="https://www.instagram.com/yellowstonenps/" target="_blank">
+              <i className="fab fa-instagram"></i>
+            </a>
+            Instagram
           </p>
           <p>
-            <i className="fab fa-twitter"></i>Twitter
+            <a href="https://twitter.com/YellowstoneNPS" target="_blank">
+              <i className="fab fa-twitter"></i>
+            </a>
+            Twitter
           </p>
           <p>
-            <i className="fab fa-youtube"></i>YouTube
+            <a
+              href="https://www.youtube.com/user/YellowstoneNPS"
+              target="_blank"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+            YouTube
           </p>
         </div>
       </div>
