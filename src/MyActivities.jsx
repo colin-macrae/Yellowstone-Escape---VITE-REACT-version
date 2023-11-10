@@ -69,6 +69,9 @@ export function getActivitiesCart() {
 export function addToMyActivities(currentActivity) {
   const activitiesCart = getActivitiesCart();
   for (let i = 0; i < activitiesCart.length; i++) {
+    if (activitiesCart[i].id === currentActivity.id) {
+      return;
+    }
   }
   activitiesCart.push(currentActivity);
   localStorage.setItem("activities-cart", JSON.stringify(activitiesCart));
