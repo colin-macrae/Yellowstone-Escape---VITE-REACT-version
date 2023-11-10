@@ -15,6 +15,7 @@
 
 .details-container img {
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .details-container button {
@@ -37,6 +38,14 @@
 
 .details-container:last-child {
   padding-bottom: 1rem;
+}
+
+.details-like-btn, .details-like-btn:hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent !important;
+  border: none !important;
 }
 
 @media (max-width: 600px) {

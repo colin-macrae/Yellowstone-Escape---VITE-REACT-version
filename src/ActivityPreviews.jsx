@@ -117,6 +117,8 @@ const ActivityPreviews = () => {
   );
 };
 
+
+
 export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, setClassNameChange, classNameChange }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
