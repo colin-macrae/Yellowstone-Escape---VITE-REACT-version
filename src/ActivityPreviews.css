@@ -67,7 +67,6 @@
   border-radius: 3px;
 }
 
-.activity-card button:hover,
 .pagination-buttons button:hover {
   background-color: rgb(145, 82, 19);
   cursor: pointer;
@@ -78,10 +77,24 @@
   justify-content: flex-end;
 }
 
-.added {
-  background-color: grey !important;
-  border: none !important;
+.add-to-favs-btn button {
+  background-color: transparent;
+  border: none;
 }
+
+.fa-heart {
+  background-color: transparent;
+}
+
+.heart-red {
+  color: red;
+  background-color: transparent !important;
+}
+
+.heart-transparent {
+  color: rgb(187, 187, 187);
+}
+
 
 /********************************/
 /* PAGINATION*/

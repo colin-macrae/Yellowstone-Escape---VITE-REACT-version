@@ -154,7 +154,11 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
           }}
           className={added ? "added" : classNameChange}
         >
-          {added ? "Added" : "Add to My Activities"}
+          {added ? (
+            <i className="fas fa-heart heart-red"></i>
+          ) : (
+            <i className="fas fa-heart heart-transparent"></i>
+          )}
         </button>
       </div>
     </>
