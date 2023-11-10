@@ -91,6 +91,10 @@
   color: rgb(187, 187, 187);
 }
 
+.loading {
+  height: 80rem;
+}
+
 
 /********************************/
 /* PAGINATION*/
@@ -125,15 +129,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.no-favs {
-  height: 45rem;
-  padding-top: 3rem;
-}
-
-.loading {
-  height: 80rem;
 }
 
 
