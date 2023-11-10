@@ -119,10 +119,6 @@ export default function ActivityDetails() {
           __html: currentActivity.accessibilityInformation,
         }}
       />
-
-      {/* <button onClick={() => removeFromCart(currentActivity)}>
-        Remove from My Activities
-      </button> */}
     </div>
   );
 }
