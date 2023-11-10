@@ -42,8 +42,8 @@
 
 .details-like-btn, .details-like-btn:hover {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0px;
+  right: -4rem;
   background-color: transparent !important;
   border: none !important;
 }
