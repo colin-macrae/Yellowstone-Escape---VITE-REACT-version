@@ -3,8 +3,7 @@ import "./ActivityPreviews.css";
 import "./index.css";
 import "./queries.css";
 import { Link } from "react-router-dom";
-import { addToMyActivities } from "./MyActivities";
-import { getActivitiesCart } from "./MyActivities";
+import { addToMyActivities, getActivitiesCart } from "./MyActivities";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
@@ -119,7 +118,7 @@ const ActivityPreviews = () => {
 
 
 
-export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, setClassNameChange, classNameChange }) {
+export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, classNameChange }) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
   
