@@ -57,8 +57,9 @@
 
 .activity-card button {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 1.4rem;
   padding: 0.2rem 0.4rem;
 }
 
@@ -79,8 +80,6 @@
 
 .fa-heart {
   background-color: transparent;
-  height: 4rem;
-  font-size: 2.4rem;
 }
 
 .heart-red {
@@ -89,7 +88,7 @@
 }
 
 .heart-transparent {
-  color: rgba(187, 187, 187, 0.733);
+  color: rgb(187, 187, 187);
 }
 
 .loading {
