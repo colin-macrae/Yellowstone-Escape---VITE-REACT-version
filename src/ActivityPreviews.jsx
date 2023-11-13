@@ -3,7 +3,7 @@ import "./ActivityPreviews.css";
 import "./index.css";
 import "./queries.css";
 import { Link } from "react-router-dom";
-import { addToMyActivities, getActivitiesCart } from "./MyActivities";
+import { addToMyActivities, getActivitiesCart, removeFromCart } from "./MyActivities";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
@@ -147,7 +147,30 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
           <p className="activity-card-details">Season: {season}</p>
         </div>
       </Link>
+
+
+
+{added ? 
+
+      (
       <div className="add-to-favs-btn">
+        <button
+          onClick={() => {
+            removeFromCart(currentActivity);
+            setAddClicked(!addClicked);
+          }}
+          className={added ? "added" : classNameChange}
+        >
+          {added ? (
+            <i className="fas fa-heart heart-red"></i>
+          ) : (
+            <i className="fas fa-heart heart-transparent"></i>
+          )}
+        </button>
+      </div>
+      
+):(
+  <div className="add-to-favs-btn">
         <button
           onClick={() => {
             addToMyActivities(currentActivity);
@@ -162,6 +185,16 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
           )}
         </button>
       </div>
+)
+      }
+      
+
+
+      
+
+
+
+
     </>
   );
 }
