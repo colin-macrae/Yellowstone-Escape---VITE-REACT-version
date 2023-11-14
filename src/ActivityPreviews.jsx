@@ -145,7 +145,10 @@ export function Activity({
 
   return (
     <>
-      <Link to={`/activitydetails/${id}`}>
+      <Link 
+      to={`/activitydetails/${id}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <img className="activity-list-img" src={images[0].url} alt={title} />
         <div className="activity-card-text">
           <h3 className="header-tertiary activity-card-title">{title}</h3>
