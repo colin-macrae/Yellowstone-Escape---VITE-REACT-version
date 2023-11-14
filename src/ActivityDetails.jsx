@@ -69,6 +69,8 @@ export default function ActivityDetails() {
   }
   savedChecker();
 
+  const {longDescription, duration, name, arePetsPermittedWithRestrictions, location, season, timeOfDay, title, images, accessibilityInformation } = currentActivity
+
   return (
     <div className="container details-container">
       <p className="under-construction">**page under construction**</p>
@@ -98,25 +100,25 @@ export default function ActivityDetails() {
           )}
         </button>
 
-      <p>{currentActivity.title}</p>
+      <p>{title}</p>
       <img
         className="activity-list-img"
-        src={currentActivity.images[0].url}
-        alt={currentActivity.title}
+        src={images[0].url}
+        alt={title}
       />
       <p
-        dangerouslySetInnerHTML={{ __html: currentActivity.longDescription }}
+        dangerouslySetInnerHTML={{ __html: longDescription }}
       />
-      <p>Duration: {currentActivity.duration}</p>
-      <p>Activity type: {currentActivity.activities.name}</p>
-      <p>Pets allowed: {currentActivity.arePetsPermittedWithRestrictions}</p>
-      <p>Location: {currentActivity.location}</p>
-      <p>Season: {currentActivity.season}</p>
-      <p>Time of Day: {currentActivity.timeOfDay}</p>
+      <p>Duration: {duration}</p>
+      <p>Activity type: {name}</p>
+      <p>Pets allowed: {arePetsPermittedWithRestrictions}</p>
+      <p>Location: {location}</p>
+      <p>Season: {season}</p>
+      <p>Time of Day: {timeOfDay}</p>
       <p>Accessibility information:</p>
       <p
         dangerouslySetInnerHTML={{
-          __html: currentActivity.accessibilityInformation,
+          __html: accessibilityInformation,
         }}
       />
     </div>
