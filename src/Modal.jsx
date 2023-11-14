@@ -20,6 +20,7 @@ export default function Modal({ showModal, setShowModal, setMySavedActivities })
               localStorage.removeItem("activities-cart");
               setMySavedActivities([]);
               setShowModal(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
             Delete All
