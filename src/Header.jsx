@@ -5,7 +5,9 @@ function Header() {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header-title">
+        <Link to="/" className="header-title"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <p>Yellowstone Escape</p>
           <p>LOOK NO FURTHER</p>
         </Link>
