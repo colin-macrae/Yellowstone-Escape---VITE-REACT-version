@@ -1,10 +1,12 @@
 import { Activity } from "./ActivityPreviews";
 import { useState, useEffect } from "react";
 import "./ActivityPreviews.css";
-import "./MyActivities.css"
+import "./MyActivities.css";
+import Modal from "./Modal";
 
 export default function MyActivities() {
   const [mySavedActivities, setMySavedActivities] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const activities = getActivitiesCart();
@@ -14,7 +16,6 @@ export default function MyActivities() {
   return (
     <div>
       <div className="container">
-
         <h2 className="header-secondary activities-list-header">
           My Activities
         </h2>
@@ -42,8 +43,7 @@ export default function MyActivities() {
           <button
             className="remove-all-btn"
             onClick={() => {
-              localStorage.removeItem("activities-cart");
-              setMySavedActivities([]);
+              setShowModal(true);
             }}
           >
             Clear all My Activities
@@ -51,6 +51,11 @@ export default function MyActivities() {
         ) : (
           ""
         )}
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          setMySavedActivities={setMySavedActivities}
+        />
       </div>
     </div>
   );

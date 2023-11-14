@@ -3,23 +3,26 @@ import "./ActivityPreviews.css";
 import "./index.css";
 import "./queries.css";
 import { Link } from "react-router-dom";
-import { addToMyActivities, getActivitiesCart, removeFromCart } from "./MyActivities";
+import {
+  addToMyActivities,
+  getActivitiesCart,
+  removeFromCart,
+} from "./MyActivities";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;  
+  const itemsPerPage = 6;
   const [classNameChange, setClassNameChange] = useState("null");
   const [mySavedActivities, setMySavedActivities] = useState([]);
   const [addClicked, setAddClicked] = useState(true);
   const [loading, setLoading] = useState(true);
-  
+
   // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
   useEffect(() => {
     const cart = getActivitiesCart();
     setMySavedActivities(cart);
   }, [addClicked]);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +32,7 @@ const ActivityPreviews = () => {
         );
         const data = await response.json();
         setUsers(data.data);
-        setLoading(false); 
+        setLoading(false);
       } catch (error) {
         console.log(error);
         setLoading(false);
@@ -39,7 +42,7 @@ const ActivityPreviews = () => {
   }, []);
 
   if (loading) {
-    return <p className="loading">Loading...</p>; 
+    return <p className="loading">Loading...</p>;
   }
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -116,12 +119,16 @@ const ActivityPreviews = () => {
   );
 };
 
-
-
-export function Activity({ activity, mySavedActivities, setAddClicked, addClicked, classNameChange }) {
+export function Activity({
+  activity,
+  mySavedActivities,
+  setAddClicked,
+  addClicked,
+  classNameChange,
+}) {
   const { id, title, shortDescription, images, location, season } = activity;
   let currentActivity = activity;
-  
+
   let added = false;
   function savedChecker() {
     if (mySavedActivities) {
@@ -147,54 +154,39 @@ export function Activity({ activity, mySavedActivities, setAddClicked, addClicke
           <p className="activity-card-details">Season: {season}</p>
         </div>
       </Link>
-
-
-
-{added ? 
-
-      (
-      <div className="add-to-favs-btn">
-        <button
-          onClick={() => {
-            removeFromCart(currentActivity);
-            setAddClicked(!addClicked);
-          }}
-          className={added ? "added" : classNameChange}
-        >
-          {added ? (
-            <i className="fas fa-heart heart-red"></i>
-          ) : (
-            <i className="fas fa-heart heart-transparent"></i>
-          )}
-        </button>
-      </div>
-      
-):(
-  <div className="add-to-favs-btn">
-        <button
-          onClick={() => {
-            addToMyActivities(currentActivity);
-            setAddClicked(!addClicked);
-          }}
-          className={added ? "added" : classNameChange}
-        >
-          {added ? (
-            <i className="fas fa-heart heart-red"></i>
-          ) : (
-            <i className="fas fa-heart heart-transparent"></i>
-          )}
-        </button>
-      </div>
-)
-      }
-      
-
-
-      
-
-
-
-
+      {added ? (
+        <div className="add-to-favs-btn">
+          <button
+            onClick={() => {
+              removeFromCart(currentActivity);
+              setAddClicked(!addClicked);
+            }}
+            className={added ? "added" : classNameChange}
+          >
+            {added ? (
+              <i className="fas fa-heart heart-red"></i>
+            ) : (
+              <i className="fas fa-heart heart-transparent"></i>
+            )}
+          </button>
+        </div>
+      ) : (
+        <div className="add-to-favs-btn">
+          <button
+            onClick={() => {
+              addToMyActivities(currentActivity);
+              setAddClicked(!addClicked);
+            }}
+            className={added ? "added" : classNameChange}
+          >
+            {added ? (
+              <i className="fas fa-heart heart-red"></i>
+            ) : (
+              <i className="fas fa-heart heart-transparent"></i>
+            )}
+          </button>
+        </div>
+      )}
     </>
   );
 }
