@@ -5,9 +5,7 @@ function Header() {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header-title"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
+        <Link to="/" className="header-title" onClick={scrollToTop}>
           <p>Yellowstone Escape</p>
           <p>LOOK NO FURTHER</p>
         </Link>
@@ -17,13 +15,17 @@ function Header() {
               <Link
                 to="/activitypreviews"
                 className="nav-link"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={scrollToTop}
               >
                 Browse
               </Link>
             </li>
             <li>
-              <Link to="/myactivities" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              <Link
+                to="/myactivities"
+                className="nav-link"
+                onClick={scrollToTop}
+              >
                 My Activities
               </Link>
             </li>
@@ -34,3 +36,7 @@ function Header() {
   );
 };
 export default Header;
+
+export function scrollToTop () {
+  window.scrollTo({ top: 0, behavior: "smooth" })
+}

@@ -8,6 +8,7 @@ import {
   getActivitiesCart,
   removeFromCart,
 } from "./MyActivities";
+import { scrollToTop } from "./Header";
 
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
@@ -51,12 +52,12 @@ const ActivityPreviews = () => {
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToTop();
   };
 
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToTop();;
   };
 
   const pageIndicators = Array.from(
@@ -147,7 +148,7 @@ export function Activity({
     <>
       <Link 
       to={`/activitydetails/${id}`}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      onClick={scrollToTop}
       >
         <img className="activity-list-img" src={images[0].url} alt={title} />
         <div className="activity-card-text">

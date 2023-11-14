@@ -5,6 +5,7 @@ import "./queries.css";
 import { addToMyActivities } from "./MyActivities.jsx";
 import { removeFromCart } from "./MyActivities.jsx";
 import { getActivitiesCart } from "./MyActivities.jsx";
+import { scrollToTop } from "./Header.jsx";
 
 export default function ActivityDetails() {
   const { id } = useParams();
