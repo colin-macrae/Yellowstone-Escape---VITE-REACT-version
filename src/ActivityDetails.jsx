@@ -69,58 +69,95 @@ export default function ActivityDetails() {
   }
   savedChecker();
 
-  const {longDescription, duration, name, arePetsPermittedWithRestrictions, location, season, timeOfDay, title, images, accessibilityInformation } = currentActivity
+  const {
+    longDescription,
+    duration,
+    name,
+    arePetsPermittedWithRestrictions,
+    location,
+    season,
+    timeOfDay,
+    title,
+    images,
+    accessibilityInformation,
+  } = currentActivity;
+  console.log(currentActivity);
 
   return (
     <div className="container details-container">
-      <p className="under-construction">**page under construction**</p>
 
-        <button
-          className="details-like-btn"
-          onClick={
-            added
-              ? () => {
-                  removeFromCart(currentActivity);
-                  setAddClicked(!addClicked);
-                }
-              : () => {
-                  addToMyActivities(currentActivity);
-                  setAddClicked(!addClicked);
-                }
-          }
-        >
-          {added ? (
-            <div>
-              <i className="fas fa-heart heart-red"></i>
-            </div>
-          ) : (
-            <div>
-              <i className="fas fa-heart heart-transparent"></i>
-            </div>
-          )}
-        </button>
+      <button
+        className="details-like-btn"
+        onClick={
+          added
+            ? () => {
+                removeFromCart(currentActivity);
+                setAddClicked(!addClicked);
+              }
+            : () => {
+                addToMyActivities(currentActivity);
+                setAddClicked(!addClicked);
+              }
+        }
+      >
+        {added ? (
+          <div>
+            <i className="fas fa-heart heart-red"></i>
+          </div>
+        ) : (
+          <div>
+            <i className="fas fa-heart heart-transparent"></i>
+          </div>
+        )}
+      </button>
 
-      <p>{title}</p>
-      <img
-        className="activity-list-img"
-        src={images[0].url}
-        alt={title}
-      />
-      <p
-        dangerouslySetInnerHTML={{ __html: longDescription }}
-      />
-      <p>Duration: {duration}</p>
-      <p>Activity type: {name}</p>
-      <p>Pets allowed: {arePetsPermittedWithRestrictions}</p>
-      <p>Location: {location}</p>
-      <p>Season: {season}</p>
-      <p>Time of Day: {timeOfDay}</p>
-      <p>Accessibility information:</p>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: accessibilityInformation,
-        }}
-      />
+      <h2 className="details-title">{title}</h2>
+      <img className="activity-list-img" src={images[0].url} alt={title} />
+      <p dangerouslySetInnerHTML={{ __html: longDescription }} />
+
+      {duration !== "" && duration !== undefined && duration != [] ? (
+        <div className="description-item-container">
+          <p className="description-item-name">Duration:</p>
+          <p className="description-item-info">
+            {duration}
+          </p>
+        </div>
+      ) : null}
+
+      {name !== "" && name !== undefined && name != [] ? (
+        <div className="description-item-container">
+          <p className="description-item-name">Activity type:</p>
+          <p className="description-item-info">{name}</p>
+        </div>
+      ) : null}
+
+      <div className="description-item-container">
+        <p className="description-item-name">Pets allowed:</p>
+        <p className="description-item-info">
+          {arePetsPermittedWithRestrictions === true ? "Yes" : "No"}
+        </p>
+      </div>
+
+      {location !== "" && location !== undefined && location != [] ? (
+        <div className="description-item-container">
+          <p className="description-item-name">Location:</p>
+          <p className="description-item-info">{location}</p>
+        </div>
+      ) : null}
+
+      {season !== "" && season !== undefined && season != [] ? (
+        <div className="description-item-container">
+          <p className="description-item-name">Season:</p>
+          <p className="description-item-info">{season[0]}</p>
+        </div>
+      ) : null}
+
+      {timeOfDay !== "" && timeOfDay !== undefined && timeOfDay != [] ? (
+        <div className="description-item-container">
+          <p className="description-item-name">Time of Day:</p>
+          <p className="description-item-info">{timeOfDay[0]}</p>
+        </div>
+      ) : null}
     </div>
   );
 }

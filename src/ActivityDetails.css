@@ -8,6 +8,11 @@
   position: relative;
 }
 
+.details-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 .details-container p {
   margin-bottom: 2rem;
   line-height: 1.4;
@@ -49,6 +54,16 @@
   border: none !important;
 }
 
+.description-item-container {
+  display: flex;
+}
+
+.description-item-name {
+  width: 12rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
 @media (max-width: 600px) {
   .details-container {
     padding: 1rem;
@@ -59,4 +74,9 @@
     position: absolute;
     right: -8rem;
   }
+
+  /* .description-item-name {
+  width: 40%;
+  margin-right: 1rem;
+} */
 }
