@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import "./ActivityPreviews.css";
 import "./MyActivities.css";
 import Modal from "./Modal";
+import { scrollToTop } from "./Header";
 
 export default function MyActivities() {
   const [mySavedActivities, setMySavedActivities] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  
 
   useEffect(() => {
     const activities = getActivitiesCart();
@@ -29,6 +31,7 @@ export default function MyActivities() {
                   onClick={() => {
                     removeFromCart(activity);
                     setMySavedActivities(getActivitiesCart());
+                    scrollToTop();
                   }}
                 >
                   Remove
