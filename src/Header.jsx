@@ -12,12 +12,16 @@ function Header() {
         <nav className="main-nav">
           <ul>
             <li>
-              <Link to="/activitypreviews" className="nav-link">
+              <Link
+                to="/activitypreviews"
+                className="nav-link"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 Browse
               </Link>
             </li>
             <li>
-              <Link to="/myactivities" className="nav-link">
+              <Link to="/myactivities" className="nav-link" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 My Activities
               </Link>
             </li>
