@@ -10,7 +10,7 @@
 
 .details-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .details-container p {
@@ -48,7 +48,7 @@
 .details-like-btn,
 .details-like-btn:hover {
   position: absolute;
-  top: 0px;
+  top: -5px;
   right: -4rem;
   background-color: transparent !important;
   border: none !important;
@@ -66,17 +66,13 @@
 
 @media (max-width: 600px) {
   .details-container {
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 3rem;
   }
 
   .details-like-btn,
   .details-like-btn:hover {
-    position: absolute;
-    right: -8rem;
+    top: -2.7rem;
+    right: -7rem;
   }
-
-  /* .description-item-name {
-  width: 40%;
-  margin-right: 1rem;
-} */
 }
