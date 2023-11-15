@@ -1,6 +1,12 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 100; 
+  z-index: 100;
 }
 
+@media (max-width: 385px) {
+  .main-nav ul {
+    display: block !important;
+    line-height: 2.5;
+  }
+}
