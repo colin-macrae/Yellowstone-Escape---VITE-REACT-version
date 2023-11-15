@@ -10,6 +10,8 @@ import {
 } from "./MyActivities";
 import { scrollToTop } from "./Header";
 
+
+
 const ActivityPreviews = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,11 +21,23 @@ const ActivityPreviews = () => {
   const [addClicked, setAddClicked] = useState(true);
   const [loading, setLoading] = useState(true);
 
+  // Persist last page viewed when returning to browse
+  function setStorageCurrentPage() {
+    sessionStorage.setItem("current-page", JSON.stringify(currentPage));
+  } 
+  function getStorageCurrentPage() {
+    let currentPageStorage = JSON.parse(sessionStorage.getItem("current-page"));
+    console.log(currentPageStorage);
+    return currentPageStorage
+  }  
+
   // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
   useEffect(() => {
     const cart = getActivitiesCart();
     setMySavedActivities(cart);
   }, [addClicked]);
+
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,6 +54,7 @@ const ActivityPreviews = () => {
       }
     };
     fetchData();
+    setCurrentPage(getStorageCurrentPage());
   }, []);
 
   if (loading) {
@@ -103,12 +118,22 @@ const ActivityPreviews = () => {
             <div className="pagination-buttons">
               <div>
                 {currentPage > 1 && (
-                  <button onClick={prevPage}>&larr; Previous</button>
+                  <button onClick={
+                    () => {
+                      prevPage();
+                      setStorageCurrentPage();
+                    }
+                    }>&larr; Previous</button>
                 )}
               </div>
               <div>
                 {indexOfLastItem < users.length && (
-                  <button onClick={nextPage}>Next &rarr;</button>
+                  <button onClick={
+                    () => {
+                      nextPage();
+                      setStorageCurrentPage();
+                    }
+                  }>Next &rarr;</button>
                 )}
               </div>
             </div>
@@ -197,3 +222,5 @@ export function Activity({
 }
 
 export default ActivityPreviews;
+
+
