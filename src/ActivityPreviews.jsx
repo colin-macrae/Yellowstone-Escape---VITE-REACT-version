@@ -26,9 +26,10 @@ const ActivityPreviews = () => {
     sessionStorage.setItem("current-page", JSON.stringify(currentPage));
   } 
   function getStorageCurrentPage() {
-    let currentPageStorage = JSON.parse(sessionStorage.getItem("current-page"));
+    let currentPageStorage = JSON.parse(sessionStorage.getItem("current-page")) + 1;
+    if (currentPageStorage === null) currentPageStorage = 1 
     console.log(currentPageStorage);
-    return currentPageStorage
+    return currentPageStorage;
   }  
 
   // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
