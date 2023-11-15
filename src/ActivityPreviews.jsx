@@ -112,6 +112,7 @@ const ActivityPreviews = () => {
                 )}
               </div>
             </div>
+            <div className="current-page">Page: {currentPage}</div>            
             <div className="pagination-dots">{pageIndicators}</div>
           </div>
         </div>

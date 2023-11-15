@@ -131,4 +131,13 @@
   justify-content: center;
 }
 
+.pagination-dots {
+  margin-top: 2rem;
+}
+
+.current-page {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 
