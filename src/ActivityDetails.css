@@ -11,6 +11,7 @@
 .details-title {
   font-size: 2rem;
   margin-bottom: 2rem;
+  max-width: 93%;
 }
 
 .details-container p {
