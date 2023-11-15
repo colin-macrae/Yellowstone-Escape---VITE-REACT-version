@@ -79,9 +79,7 @@ export default function ActivityDetails() {
     timeOfDay,
     title,
     images,
-    accessibilityInformation,
   } = currentActivity;
-  console.log(currentActivity);
 
   return (
     <div className="container details-container">
@@ -124,6 +122,7 @@ export default function ActivityDetails() {
         </div>
       ) : null}
 
+      {/* Checking for any empty objects before rendering elements conditionally, as the API is inconsistent in how it deals with them */}
       {name !== "" && name !== undefined && name != [] ? (
         <div className="description-item-container">
           <p className="description-item-name">Activity type:</p>
