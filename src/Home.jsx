@@ -1,6 +1,7 @@
 import "./index.css";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import { scrollToTop } from "./Header";
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
               className="see-activities-btn"
               to="/activitypreviews"
               href="#"
+              onClick={scrollToTop}
             >
               BROWSE ACTIVITIES &rarr;
             </Link>
@@ -32,7 +34,6 @@ function Home() {
           alt="yellowstone image"
         />
       </div>
-      
     </div>
   );
 }
