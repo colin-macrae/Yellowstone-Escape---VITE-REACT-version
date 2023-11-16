@@ -1,8 +1,6 @@
 ## Yellowstone Escape 
 A frontend web application for travelers to browse activities at Yellowstone National Park.
 
-Users can browse all activities, view individual activity details, and save activities to a favorites list.
-
 A rebuild of my Vanilla JS Yellowstone Escape site, it was built with React, accessing the US National Parks and Services API.
 
 Live link: https://yellowstone-escape-reactjs.netlify.app/
