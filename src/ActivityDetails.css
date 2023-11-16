@@ -70,10 +70,21 @@
     padding: 2rem;
     padding-top: 3rem;
   }
-
   .details-like-btn,
   .details-like-btn:hover {
     top: -2.7rem;
     right: -7rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .details-container img {
+    height: 35rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .details-container img {
+    height: 50rem;
   }
 }
