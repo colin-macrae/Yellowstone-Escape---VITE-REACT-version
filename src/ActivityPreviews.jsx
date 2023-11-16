@@ -25,8 +25,6 @@ const ActivityPreviews = () => {
     setMySavedActivities(cart);
   }, [addClicked]);
 
-  
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -59,7 +57,7 @@ const ActivityPreviews = () => {
 
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
-    scrollToTop();;
+    scrollToTop();
   };
 
   const pageIndicators = Array.from(
@@ -114,7 +112,7 @@ const ActivityPreviews = () => {
                 )}
               </div>
             </div>
-            <div className="current-page">Page: {currentPage}</div>            
+            <div className="current-page">Page: {currentPage}</div>
             <div className="pagination-dots">{pageIndicators}</div>
           </div>
         </div>
@@ -149,16 +147,18 @@ export function Activity({
 
   return (
     <>
-      <Link 
-      to={`/activitydetails/${id}`}
-      onClick={scrollToTop}
-      >
+      <Link to={`/activitydetails/${id}`} onClick={scrollToTop}>
         <img className="activity-list-img" src={images[0].url} alt={title} />
         <div className="activity-card-text">
           <h3 className="header-tertiary activity-card-title">{title}</h3>
           <p className="activity-card-details">{shortDescription}</p>
-          <p className="activity-card-details">Location: {location}</p>
-          <p className="activity-card-details">Season: {season}</p>
+          {/* Conditional rendering if objects are empty */}
+          {location !== "" && location !== undefined && location != [] ? (
+            <p className="activity-card-details">Location: {location}</p>
+          ) : null}
+          {season !== "" && season !== undefined && season != [] ? (
+            <p className="activity-card-details">Season: {season[0]}</p>
+          ) : null}
         </div>
       </Link>
       {added ? (
@@ -199,5 +199,3 @@ export function Activity({
 }
 
 export default ActivityPreviews;
-
-
