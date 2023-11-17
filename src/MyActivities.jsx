@@ -4,6 +4,7 @@ import "./ActivityPreviews.css";
 import "./MyActivities.css";
 import Modal from "./Modal";
 import { scrollToTop } from "./Header";
+import { getActivitiesCart } from "./CartFunctions";
 
 export default function MyActivities() {
   const [mySavedActivities, setMySavedActivities] = useState([]);
