@@ -7,7 +7,7 @@ import {
   addToMyActivities,
   getActivitiesCart,
   removeFromCart,
-} from "./MyActivities";
+} from "./CartFunctions";
 import { scrollToTop } from "./Header";
 
 const ActivityPreviews = () => {

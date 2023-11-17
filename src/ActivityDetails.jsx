@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ActivityDetails.css";
 import "./queries.css";
-import { addToMyActivities } from "./MyActivities.jsx";
-import { removeFromCart } from "./MyActivities.jsx";
-import { getActivitiesCart } from "./MyActivities.jsx";
-import { scrollToTop } from "./Header.jsx";
+import {
+  addToMyActivities,
+  removeFromCart,
+  getActivitiesCart,
+} from "./CartFunctions";
 
 export default function ActivityDetails() {
   const { id } = useParams();
