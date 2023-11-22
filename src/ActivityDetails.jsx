@@ -64,7 +64,8 @@ export default function ActivityDetails() {
       for (let i = 0; i < savedActivities.length; i++) {
         if (savedActivities[i].id === id) {
           added = true;
-        } else added = false;
+          break;
+        } 
       }
     }
   }
