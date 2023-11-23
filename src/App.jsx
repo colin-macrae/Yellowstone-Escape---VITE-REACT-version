@@ -6,16 +6,47 @@ import ActivityPreviews from "./ActivityPreviews";
 import ActivityDetails from "./ActivityDetails";
 import MyActivities from "./MyActivities";
 import Footer from "./Footer";
+import { useState } from "react";
 
 const App = () => {
+  const [mySavedActivities, setMySavedActivities] = useState([]);
+  const [addClicked, setAddClicked] = useState(true);
   return (
     <div className="outer-container">
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/activitypreviews" element={<ActivityPreviews />} />
-        <Route path="/activitydetails/:id" element={<ActivityDetails />} />
-        <Route path="/myactivities" element={<MyActivities />} />
+        <Route
+          path="/activitypreviews"
+          element={
+            <ActivityPreviews
+              setMySavedActivities={setMySavedActivities}
+              mySavedActivities={mySavedActivities}
+              setAddClicked={setAddClicked}
+              addClicked={addClicked}
+            />
+          }
+        />
+        <Route
+          path="/activitydetails/:id"
+          element={
+            <ActivityDetails
+              setMySavedActivities={setMySavedActivities}
+              mySavedActivities={mySavedActivities}
+              setAddClicked={setAddClicked}
+              addClicked={addClicked}
+            />
+          }
+        />
+        <Route
+          path="/myactivities"
+          element={
+            <MyActivities
+              setMySavedActivities={setMySavedActivities}
+              mySavedActivities={mySavedActivities}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </div>

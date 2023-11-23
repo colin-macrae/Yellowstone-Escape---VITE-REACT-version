@@ -6,10 +6,11 @@ import Modal from "./Modal";
 import { scrollToTop } from "./Header";
 import { getActivitiesCart, removeFromCart } from "./CartFunctions";
 
-export default function MyActivities() {
-  const [mySavedActivities, setMySavedActivities] = useState([]);
+export default function MyActivities({
+  mySavedActivities,
+  setMySavedActivities
+}) {
   const [showModal, setShowModal] = useState(false);
-  
 
   useEffect(() => {
     const activities = getActivitiesCart();

@@ -8,15 +8,16 @@ import {
   getActivitiesCart,
 } from "./CartFunctions";
 
-export default function ActivityDetails() {
+export default function ActivityDetails({
+  mySavedActivities,
+  setMySavedActivities,
+  addClicked,
+  setAddClicked,
+}) {
   const { id } = useParams();
   const [activities, setActivities] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
-
-  const [mySavedActivities, setMySavedActivities] = useState([]);
-
-  const [addClicked, setAddClicked] = useState(true);
 
   useEffect(() => {
     const cart = getActivitiesCart();
@@ -65,7 +66,7 @@ export default function ActivityDetails() {
         if (savedActivities[i].id === id) {
           added = true;
           break;
-        } 
+        }
       }
     }
   }
@@ -85,7 +86,6 @@ export default function ActivityDetails() {
 
   return (
     <div className="container details-container">
-
       <button
         className="details-like-btn"
         onClick={
@@ -118,9 +118,7 @@ export default function ActivityDetails() {
       {duration !== "" && duration !== undefined && duration != [] ? (
         <div className="description-item-container">
           <p className="description-item-name">Duration:</p>
-          <p className="description-item-info">
-            {duration}
-          </p>
+          <p className="description-item-info">{duration}</p>
         </div>
       ) : null}
 
