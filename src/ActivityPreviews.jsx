@@ -21,6 +21,10 @@ const ActivityPreviews = ({
   const itemsPerPage = 6;
   const [classNameChange, setClassNameChange] = useState("null");
   const [loading, setLoading] = useState(true);
+  // page view navigation useStates
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
 
   // addClicked is added as a dependency as to prevent an infinite loop if  using mySavedActivities as the dependency.  the re-renders are needed when the add button is clicked in order for page to show changes.
   useEffect(() => {
@@ -47,11 +51,7 @@ const ActivityPreviews = ({
 
   if (loading) {
     return <p className="loading">Loading...</p>;
-  }
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+  }  
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -74,6 +74,14 @@ const ActivityPreviews = ({
         onClick={() => setCurrentPage(index + 1)}
       ></span>
     )
+  );
+
+  // Conditional rendering of page nav buttons 
+  const previousButton = currentPage > 1 && (
+    <button onClick={prevPage}>&larr; Previous</button>
+  );
+  const nextButton = indexOfLastItem < users.length && (
+    <button onClick={nextPage}>Next &rarr;</button>
   );
 
   return (
@@ -105,14 +113,10 @@ const ActivityPreviews = ({
           <div className="pagination-controls">
             <div className="pagination-buttons">
               <div>
-                {currentPage > 1 && (
-                  <button onClick={prevPage}>&larr; Previous</button>
-                )}
+                {previousButton}
               </div>
               <div>
-                {indexOfLastItem < users.length && (
-                  <button onClick={nextPage}>Next &rarr;</button>
-                )}
+                {nextButton}
               </div>
             </div>
             <div className="current-page">Page: {currentPage}</div>
@@ -132,7 +136,6 @@ export function Activity({
   classNameChange,
 }) {
   const { id, title, shortDescription, images, location, season } = activity;
-  let currentActivity = activity;
 
   let added = false;
   if (mySavedActivities) {
@@ -159,7 +162,7 @@ export function Activity({
         <div className="add-to-favs-btn">
           <button
             onClick={() => {
-              removeFromCart(currentActivity);
+              removeFromCart(activity);
               setAddClicked(!addClicked);
             }}
             className={added ? "added" : classNameChange}
@@ -175,7 +178,7 @@ export function Activity({
         <div className="add-to-favs-btn">
           <button
             onClick={() => {
-              addToMyActivities(currentActivity);
+              addToMyActivities(activity);
               setAddClicked(!addClicked);
             }}
             className={added ? "added" : classNameChange}

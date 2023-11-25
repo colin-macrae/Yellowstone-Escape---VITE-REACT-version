@@ -41,7 +41,7 @@ export default function MyActivities({
               </div>
             ))
           ) : (
-            <div className="no-favs">No items added to My Favorites</div>
+            <div className="no-favs">You have no saved activities</div>
           )}
         </div>
         {mySavedActivities.length > 0 ? (
