@@ -4,6 +4,48 @@
   z-index: 100;
 }
 
+header {
+  display: flex;
+  background-color: rgb(99, 56, 13);
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  margin-bottom: 3.2rem;
+}
+
+/* Logo */
+.header-title {
+  font-family: "Cabin Sketch", cursive;
+  padding: 0.5rem 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.header-title :nth-child(1) {
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+}
+
+.header-title :nth-child(2) {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  margin: 0 0.5rem;
+}
+
 @media (max-width: 385px) {
   .main-nav ul {
     display: block !important;

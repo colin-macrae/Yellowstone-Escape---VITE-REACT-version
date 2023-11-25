@@ -20,7 +20,7 @@ export default function MyActivities({
   return (
     <div>
       <div className="container">
-        <h2 className="header-secondary activities-list-header">
+        <h2 className="heading-secondary activities-list-heading">
           My Activities
         </h2>
         <div className="activity-cards-container">

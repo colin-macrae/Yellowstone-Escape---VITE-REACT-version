@@ -87,7 +87,7 @@ const ActivityPreviews = ({
   return (
     <div>
       <div className="container">
-        <h2 className="header-secondary activities-list-header">
+        <h2 className="heading-secondary activities-list-heading">
           Activities List
         </h2>
 
@@ -147,7 +147,7 @@ export function Activity({
       <Link to={`/activitydetails/${id}`} onClick={scrollToTop}>
         <img className="activity-list-img" src={images[0].url} alt={title} />
         <div className="activity-card-text">
-          <h3 className="header-tertiary activity-card-title">{title}</h3>
+          <h3 className="heading-tertiary activity-card-title">{title}</h3>
           <p className="activity-card-details">{shortDescription}</p>
           {/* Conditional rendering if objects are empty */}
           {location !== "" && location !== undefined && location != [] ? (
