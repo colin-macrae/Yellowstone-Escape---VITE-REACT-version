@@ -59,18 +59,9 @@ export default function ActivityDetails({
   findActivity();
 
   let added = false;
-  function savedChecker() {
-    if (mySavedActivities) {
-      const savedActivities = mySavedActivities;
-      for (let i = 0; i < savedActivities.length; i++) {
-        if (savedActivities[i].id === id) {
-          added = true;
-          break;
-        }
-      }
-    }
-  }
-  savedChecker();
+  if (mySavedActivities) {added = mySavedActivities.some(
+    (savedActivity) => savedActivity.id === id
+  );}
 
   const {
     longDescription,

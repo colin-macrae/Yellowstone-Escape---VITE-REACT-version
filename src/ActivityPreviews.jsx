@@ -135,18 +135,9 @@ export function Activity({
   let currentActivity = activity;
 
   let added = false;
-  function savedChecker() {
-    if (mySavedActivities) {
-      const savedActivities = mySavedActivities;
-      for (let i = 0; i < savedActivities.length; i++) {
-        if (savedActivities[i].id === id) {
-          added = true;
-          break;
-        }
-      }
-    }
+  if (mySavedActivities) {
+    added = mySavedActivities.some((savedActivity) => savedActivity.id === id);
   }
-  savedChecker();
 
   return (
     <>

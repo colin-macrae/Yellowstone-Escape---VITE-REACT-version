@@ -10,7 +10,7 @@ import { useState } from "react";
 
 const App = () => {
   const [mySavedActivities, setMySavedActivities] = useState([]);
-  const [addClicked, setAddClicked] = useState(true);
+  const [addClicked, setAddClicked] = useState(false);
   return (
     <div className="outer-container">
       <Header />
