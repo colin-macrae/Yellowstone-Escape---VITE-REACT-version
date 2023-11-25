@@ -113,7 +113,7 @@ export default function ActivityDetails({
         </div>
       ) : null}
 
-      {/* Checking for any empty objects before rendering elements conditionally, as the API is inconsistent in how it deals with them */}
+      {/* Check for any empty objects before rendering elements conditionally, as the API is inconsistent in how it stores them */}
       {name !== "" && name !== undefined && name != [] ? (
         <div className="description-item-container">
           <p className="description-item-name">Activity type:</p>

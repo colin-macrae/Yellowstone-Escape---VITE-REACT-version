@@ -46,6 +46,7 @@ header {
   margin: 0 0.5rem;
 }
 
+/* Queries */
 @media (max-width: 385px) {
   .main-nav ul {
     display: block !important;
